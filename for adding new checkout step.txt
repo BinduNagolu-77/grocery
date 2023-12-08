@@ -1,0 +1,14 @@
+checkout steps:
+
+1. make changes in multi-step-checkout-config.xml
+	-> add the new checkout step in Responsive Checkout.
+	-> makes the changes above and below checkout accordingly after adding this.
+	->add your custom step in this Default Responsive checkout group.
+	->create a validator according to the other checkout steps and it here with other validators.
+	-> write the redirect url for the new checkout step same as other checkout steps.
+
+2.now create a controller for new checkout step.(check the reference from other checkout steps(eg:DeliveryMethodCheckoutStepController)).
+
+3. create a jsp page for the checkout step( eg:chooseDeliveryMethodPage.jsp).
+
+

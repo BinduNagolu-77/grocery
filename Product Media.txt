@@ -1,0 +1,692 @@
+# ImPex for Importing Product Media
+
+# Macros / Replacement Parameter definitions
+
+$productCatalog=groceryProductCatalog
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog]
+$media=@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=file:C:\CXCOMCL221100P_3-70007431\hybris\bin\custom\grocerystore\grocerystoreinitialdata\resources\grocerystoreinitialdata\import\sampledata\productCatalogs\$productCatalog
+#jar:com.hybris.grocerystore.initialdata.constants.GroceryStoreInitialDataConstants&/grocerystoreinitialdata/import/sampledata/productCatalogs/$productCatalog
+
+
+# Create Media
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];$media;mime[default='image/jpeg'];$catalogVersion;folder(qualifier)
+
+;1200Wx1200H;/1200Wx1200H/monster energy drink.jpg;$siteResource/images/1200Wx1200H/monster energy drink.jpg;;;images
+;515Wx515H;/515Wx515H/monster energy drink.jpg;$siteResource/images/515Wx515H/monster energy drink.jpg;;;images
+;300Wx300H;/300Wx300H/monster energy drink.jpg;$siteResource/images/300Wx300H/monster energy drink.jpg;;;images
+;96Wx96H;/96Wx96H/monster energy drink.jpg;$siteResource/images/96Wx96H/monster energy drink.jpg;;;images
+;65Wx65H;/65Wx65H/monster energy drink.jpg;$siteResource/images/65Wx65H/monster energy drink.jpg;;;images
+;30Wx30H;/30Wx30H/monster energy drink.jpg;$siteResource/images/30Wx30H/monster energy drink.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/sting energy drink.jpg;$siteResource/images/1200Wx1200H/sting energy drink.jpg;;;images
+;515Wx515H;/515Wx515H/sting energy drink.jpg;$siteResource/images/515Wx515H/sting energy drink.jpg;;;images
+;300Wx300H;/300Wx300H/sting energy drink.jpg;$siteResource/images/300Wx300H/sting energy drink.jpg;;;images
+;96Wx96H;/96Wx96H/sting energy drink.jpg;$siteResource/images/96Wx96H/sting energy drink.jpg;;;images
+;65Wx65H;/65Wx65H/sting energy drink.jpg;$siteResource/images/65Wx65H/sting energy drink.jpg;;;images
+;30Wx30H;/30Wx30H/sting energy drink.jpg;$siteResource/images/30Wx30H/sting energy drink.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/red bull.jpg;$siteResource/images/1200Wx1200H/red bull.jpg;;;images
+;515Wx515H;/515Wx515H/red bull.jpg;$siteResource/images/515Wx515H/red bull.jpg;;;images
+;300Wx300H;/300Wx300H/red bull.jpg;$siteResource/images/300Wx300H/red bull.jpg;;;images
+;96Wx96H;/96Wx96H/red bull.jpg;$siteResource/images/96Wx96H/red bull.jpg;;;images
+;65Wx65H;/65Wx65H/red bull.jpg;$siteResource/images/65Wx65H/red bull.jpg;;;images
+;30Wx30H;/30Wx30H/red bull.jpg;$siteResource/images/30Wx30H/red bull.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/coca cola.jpg;$siteResource/images/1200Wx1200H/coca cola.jpg;;;images
+;515Wx515H;/515Wx515H/coca cola.jpg;$siteResource/images/515Wx515H/coca cola.jpg;;;images
+;300Wx300H;/300Wx300H/coca cola.jpg;$siteResource/images/300Wx300H/coca cola.jpg;;;images
+;96Wx96H;/96Wx96H/coca cola.jpg;$siteResource/images/96Wx96H/coca cola.jpg;;;images
+;65Wx65H;/65Wx65H/coca cola.jpg;$siteResource/images/65Wx65H/coca cola.jpg;;;images
+;30Wx30H;/30Wx30H/coca cola.jpg;$siteResource/images/30Wx30H/coca cola.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/sprite.jpg;$siteResource/images/1200Wx1200H/sprite.jpg;;;images
+;515Wx515H;/515Wx515H/sprite.jpg;$siteResource/images/515Wx515H/sprite.jpg;;;images
+;300Wx300H;/300Wx300H/sprite.jpg;$siteResource/images/300Wx300H/sprite.jpg;;;images
+;96Wx96H;/96Wx96H/sprite.jpg;$siteResource/images/96Wx96H/sprite.jpg;;;images
+;65Wx65H;/65Wx65H/sprite.jpg;$siteResource/images/65Wx65H/sprite.jpg;;;images
+;30Wx30H;/30Wx30H/sprite.jpg;$siteResource/images/30Wx30H/sprite.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/thums up.jpg;$siteResource/images/1200Wx1200H/thums up.jpg;;;images
+;515Wx515H;/515Wx515H/thums up.jpg;$siteResource/images/515Wx515H/thums up.jpg;;;images
+;300Wx300H;/300Wx300H/thums up.jpg;$siteResource/images/300Wx300H/thums up.jpg;;;images
+;96Wx96H;/96Wx96H/thums up.jpg;$siteResource/images/96Wx96H/thums up.jpg;;;images
+;65Wx65H;/65Wx65H/thums up.jpg;$siteResource/images/65Wx65H/thums up.jpg;;;images
+;30Wx30H;/30Wx30H/thums up.jpg;$siteResource/images/30Wx30H/thums up.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/chocolate milkshake.jpg;$siteResource/images/1200Wx1200H/chocolate milkshake.jpg;;;images
+;515Wx515H;/515Wx515H/chocolate milkshake.jpg;$siteResource/images/515Wx515H/chocolate milkshake.jpg;;;images
+;300Wx300H;/300Wx300H/chocolate milkshake.jpg;$siteResource/images/300Wx300H/chocolate milkshake.jpg;;;images
+;96Wx96H;/96Wx96H/chocolate milkshake.jpg;$siteResource/images/96Wx96H/chocolate milkshake.jpg;;;images
+;65Wx65H;/65Wx65H/chocolate milkshake.jpg;$siteResource/images/65Wx65H/chocolate milkshake.jpg;;;images
+;30Wx30H;/30Wx30H/chocolate milkshake.jpg;$siteResource/images/30Wx30H/chocolate milkshake.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/mango milkshake.jpg;$siteResource/images/1200Wx1200H/mango milkshake.jpg;;;images
+;515Wx515H;/515Wx515H/mango milkshake.jpg;$siteResource/images/515Wx515H/mango milkshake.jpg;;;images
+;300Wx300H;/300Wx300H/mango milkshake.jpg;$siteResource/images/300Wx300H/mango milkshake.jpg;;;images
+;96Wx96H;/96Wx96H/mango milkshake.jpg;$siteResource/images/96Wx96H/mango milkshake.jpg;;;images
+;65Wx65H;/65Wx65H/mango milkshake.jpg;$siteResource/images/65Wx65H/mango milkshake.jpg;;;images
+;30Wx30H;/30Wx30H/mango milkshake.jpg;$siteResource/images/30Wx30H/mango milkshake.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/strawberry milkshake.jpg;$siteResource/images/1200Wx1200H/strawberry milkshake.jpg;;;images
+;515Wx515H;/515Wx515H/strawberry milkshake.jpg;$siteResource/images/515Wx515H/strawberry milkshake.jpg;;;images
+;300Wx300H;/300Wx300H/strawberry milkshake.jpg;$siteResource/images/300Wx300H/strawberry milkshake.jpg;;;images
+;96Wx96H;/96Wx96H/strawberry milkshake.jpg;$siteResource/images/96Wx96H/strawberry milkshake.jpg;;;images
+;65Wx65H;/65Wx65H/strawberry milkshake.jpg;$siteResource/images/65Wx65H/strawberry milkshake.jpg;;;images
+;30Wx30H;/30Wx30H/strawberry milkshake.jpg;$siteResource/images/30Wx30H/strawberry milkshake.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/grape juice.jpg;$siteResource/images/1200Wx1200H/grape juice.jpg;;;images
+;515Wx515H;/515Wx515H/grape juice.jpg;$siteResource/images/515Wx515H/grape juice.jpg;;;images
+;300Wx300H;/300Wx300H/grape juice.jpg;$siteResource/images/300Wx300H/grape juice.jpg;;;images
+;96Wx96H;/96Wx96H/grape juice.jpg;$siteResource/images/96Wx96H/grape juice.jpg;;;images
+;65Wx65H;/65Wx65H/grape juice.jpg;$siteResource/images/65Wx65H/grape juice.jpg;;;images
+;30Wx30H;/30Wx30H/grape juice.jpg;$siteResource/images/30Wx30H/grape juice.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/orange juice.jpg;$siteResource/images/1200Wx1200H/orange juice.jpg;;;images
+;515Wx515H;/515Wx515H/orange juice.jpg;$siteResource/images/515Wx515H/orange juice.jpg;;;images
+;300Wx300H;/300Wx300H/orange juice.jpg;$siteResource/images/300Wx300H/orange juice.jpg;;;images
+;96Wx96H;/96Wx96H/orange juice.jpg;$siteResource/images/96Wx96H/orange juice.jpg;;;images
+;65Wx65H;/65Wx65H/orange juice.jpg;$siteResource/images/65Wx65H/orange juice.jpg;;;images
+;30Wx30H;/30Wx30H/orange juice.jpg;$siteResource/images/30Wx30H/orange juice.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/mango juice.jpg;$siteResource/images/1200Wx1200H/mango juice.jpg;;;images
+;515Wx515H;/515Wx515H/mango juice.jpg;$siteResource/images/515Wx515H/mango juice.jpg;;;images
+;300Wx300H;/300Wx300H/mango juice.jpg;$siteResource/images/300Wx300H/mango juice.jpg;;;images
+;96Wx96H;/96Wx96H/mango juice.jpg;$siteResource/images/96Wx96H/mango juice.jpg;;;images
+;65Wx65H;/65Wx65H/mango juice.jpg;$siteResource/images/65Wx65H/mango juice.jpg;;;images
+;30Wx30H;/30Wx30H/mango juice.jpg;$siteResource/images/30Wx30H/mango juice.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/biotique ocean kelp shampoo.jpg;$siteResource/images/1200Wx1200H/biotique ocean kelp shampoo.jpg;;;images
+;515Wx515H;/515Wx515H/biotique ocean kelp shampoo.jpg;$siteResource/images/515Wx515H/biotique ocean kelp shampoo.jpg;;;images
+;300Wx300H;/300Wx300H/biotique ocean kelp shampoo.jpg;$siteResource/images/300Wx300H/biotique ocean kelp shampoo.jpg;;;images
+;96Wx96H;/96Wx96H/biotique ocean kelp shampoo.jpg;$siteResource/images/96Wx96H/biotique ocean kelp shampoo.jpg;;;images
+;65Wx65H;/65Wx65H/biotique ocean kelp shampoo.jpg;$siteResource/images/65Wx65H/biotique ocean kelp shampoo.jpg;;;images
+;30Wx30H;/30Wx30H/biotique ocean kelp shampoo.jpg;$siteResource/images/30Wx30H/biotique ocean kelp shampoo.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/himalaya neem face wash.jpg;$siteResource/images/1200Wx1200H/himalaya neem face wash.jpg;;;images
+;515Wx515H;/515Wx515H/himalaya neem face wash.jpg;$siteResource/images/515Wx515H/himalaya neem face wash.jpg;;;images
+;300Wx300H;/300Wx300H/himalaya neem face wash.jpg;$siteResource/images/300Wx300H/himalaya neem face wash.jpg;;;images
+;96Wx96H;/96Wx96H/himalaya neem face wash.jpg;$siteResource/images/96Wx96H/himalaya neem face wash.jpg;;;images
+;65Wx65H;/65Wx65H/himalaya neem face wash.jpg;$siteResource/images/65Wx65H/himalaya neem face wash.jpg;;;images
+;30Wx30H;/30Wx30H/himalaya neem face wash.jpg;$siteResource/images/30Wx30H/himalaya neem face wash.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/bajaj almond drops hair oil.jpg;$siteResource/images/1200Wx1200H/bajaj almond drops hair oil.jpg;;;images
+;515Wx515H;/515Wx515H/bajaj almond drops hair oil.jpg;$siteResource/images/515Wx515H/bajaj almond drops hair oil.jpg;;;images
+;300Wx300H;/300Wx300H/bajaj almond drops hair oil.jpg;$siteResource/images/300Wx300H/bajaj almond drops hair oil.jpg;;;images
+;96Wx96H;/96Wx96H/bajaj almond drops hair oil.jpg;$siteResource/images/96Wx96H/bajaj almond drops hair oil.jpg;;;images
+;65Wx65H;/65Wx65H/bajaj almond drops hair oil.jpg;$siteResource/images/65Wx65H/bajaj almond drops hair oil.jpg;;;images
+;30Wx30H;/30Wx30H/bajaj almond drops hair oil.jpg;$siteResource/images/30Wx30H/bajaj almond drops hair oil.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/lizol disinfectant surface and floor cleaner.jpg;$siteResource/images/1200Wx1200H/lizol disinfectant surface and floor cleaner.jpg;;;images
+;515Wx515H;/515Wx515H/lizol disinfectant surface and floor cleaner.jpg;$siteResource/images/515Wx515H/lizol disinfectant surface and floor cleaner.jpg;;;images
+;300Wx300H;/300Wx300H/lizol disinfectant surface and floor cleaner.jpg;$siteResource/images/300Wx300H/lizol disinfectant surface and floor cleaner.jpg;;;images
+;96Wx96H;/96Wx96H/lizol disinfectant surface and floor cleaner.jpg;$siteResource/images/96Wx96H/lizol disinfectant surface and floor cleaner.jpg;;;images
+;65Wx65H;/65Wx65H/lizol disinfectant surface and floor cleaner.jpg;$siteResource/images/65Wx65H/lizol disinfectant surface and floor cleaner.jpg;;;images
+;30Wx30H;/30Wx30H/lizol disinfectant surface and floor cleaner.jpg;$siteResource/images/30Wx30H/lizol disinfectant surface and floor cleaner.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/dettol lime disinfectant floor cleaner.jpg;$siteResource/images/1200Wx1200H/dettol lime disinfectant floor cleaner.jpg;;;images
+;515Wx515H;/515Wx515H/dettol lime disinfectant floor cleaner.jpg;$siteResource/images/515Wx515H/dettol lime disinfectant floor cleaner.jpg;;;images
+;300Wx300H;/300Wx300H/dettol lime disinfectant floor cleaner.jpg;$siteResource/images/300Wx300H/dettol lime disinfectant floor cleaner.jpg;;;images
+;96Wx96H;/96Wx96H/dettol lime disinfectant floor cleaner.jpg;$siteResource/images/96Wx96H/dettol lime disinfectant floor cleaner.jpg;;;images
+;65Wx65H;/65Wx65H/dettol lime disinfectant floor cleaner.jpg;$siteResource/images/65Wx65H/dettol lime disinfectant floor cleaner.jpg;;;images
+;30Wx30H;/30Wx30H/dettol lime disinfectant floor cleaner.jpg;$siteResource/images/30Wx30H/dettol lime disinfectant floor cleaner.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/colin glass and surface cleaner liquid spray.jpg;$siteResource/images/1200Wx1200H/colin glass and surface cleaner liquid spray.jpg;;;images
+;515Wx515H;/515Wx515H/colin glass and surface cleaner liquid spray.jpg;$siteResource/images/515Wx515H/colin glass and surface cleaner liquid spray.jpg;;;images
+;300Wx300H;/300Wx300H/colin glass and surface cleaner liquid spray.jpg;$siteResource/images/300Wx300H/colin glass and surface cleaner liquid spray.jpg;;;images
+;96Wx96H;/96Wx96H/colin glass and surface cleaner liquid spray.jpg;$siteResource/images/96Wx96H/colin glass and surface cleaner liquid spray.jpg;;;images
+;65Wx65H;/65Wx65H/colin glass and surface cleaner liquid spray.jpg;$siteResource/images/65Wx65H/colin glass and surface cleaner liquid spray.jpg;;;images
+;30Wx30H;/30Wx30H/colin glass and surface cleaner liquid spray.jpg;$siteResource/images/30Wx30H/colin glass and surface cleaner liquid spray.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/ariel detergent washing powder.jpg;$siteResource/images/1200Wx1200H/ariel detergent washing powder.jpg;;;images
+;515Wx515H;/515Wx515H/ariel detergent washing powder.jpg;$siteResource/images/515Wx515H/ariel detergent washing powder.jpg;;;images
+;300Wx300H;/300Wx300H/ariel detergent washing powder.jpg;$siteResource/images/300Wx300H/ariel detergent washing powder.jpg;;;images
+;96Wx96H;/96Wx96H/ariel detergent washing powder.jpg;$siteResource/images/96Wx96H/ariel detergent washing powder.jpg;;;images
+;65Wx65H;/65Wx65H/ariel detergent washing powder.jpg;$siteResource/images/65Wx65H/ariel detergent washing powder.jpg;;;images
+;30Wx30H;/30Wx30H/ariel detergent washing powder.jpg;$siteResource/images/30Wx30H/ariel detergent washing powder.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/surf excel easy wash detergent powder.jpg;$siteResource/images/1200Wx1200H/surf excel easy wash detergent powder.jpg;;;images
+;515Wx515H;/515Wx515H/surf excel easy wash detergent powder.jpg;$siteResource/images/515Wx515H/surf excel easy wash detergent powder.jpg;;;images
+;300Wx300H;/300Wx300H/surf excel easy wash detergent powder.jpg;$siteResource/images/300Wx300H/surf excel easy wash detergent powder.jpg;;;images
+;96Wx96H;/96Wx96H/surf excel easy wash detergent powder.jpg;$siteResource/images/96Wx96H/surf excel easy wash detergent powder.jpg;;;images
+;65Wx65H;/65Wx65H/surf excel easy wash detergent powder.jpg;$siteResource/images/65Wx65H/surf excel easy wash detergent powder.jpg;;;images
+;30Wx30H;/30Wx30H/surf excel easy wash detergent powder.jpg;$siteResource/images/30Wx30H/surf excel easy wash detergent powder.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/rin advanced detergent powder.jpg;$siteResource/images/1200Wx1200H/rin advanced detergent powder.jpg;;;images
+;515Wx515H;/515Wx515H/rin advanced detergent powder.jpg;$siteResource/images/515Wx515H/rin advanced detergent powder.jpg;;;images
+;300Wx300H;/300Wx300H/rin advanced detergent powder.jpg;$siteResource/images/300Wx300H/rin advanced detergent powder.jpg;;;images
+;96Wx96H;/96Wx96H/rin advanced detergent powder.jpg;$siteResource/images/96Wx96H/rin advanced detergent powder.jpg;;;images
+;65Wx65H;/65Wx65H/rin advanced detergent powder.jpg;$siteResource/images/65Wx65H/rin advanced detergent powder.jpg;;;images
+;30Wx30H;/30Wx30H/rin advanced detergent powder.jpg;$siteResource/images/30Wx30H/rin advanced detergent powder.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/exo dishwash bar.jpg;$siteResource/images/1200Wx1200H/exo dishwash bar.jpg;;;images
+;515Wx515H;/515Wx515H/exo dishwash bar.jpg;$siteResource/images/515Wx515H/exo dishwash bar.jpg;;;images
+;300Wx300H;/300Wx300H/exo dishwash bar.jpg;$siteResource/images/300Wx300H/exo dishwash bar.jpg;;;images
+;96Wx96H;/96Wx96H/exo dishwash bar.jpg;$siteResource/images/96Wx96H/exo dishwash bar.jpg;;;images
+;65Wx65H;/65Wx65H/exo dishwash bar.jpg;$siteResource/images/65Wx65H/exo dishwash bar.jpg;;;images
+;30Wx30H;/30Wx30H/exo dishwash bar.jpg;$siteResource/images/30Wx30H/exo dishwash bar.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/vim dishwash liquid gel lemon bottle.jpg;$siteResource/images/1200Wx1200H/vim dishwash liquid gel lemon bottle.jpg;;;images
+;515Wx515H;/515Wx515H/vim dishwash liquid gel lemon bottle.jpg;$siteResource/images/515Wx515H/vim dishwash liquid gel lemon bottle.jpg;;;images
+;300Wx300H;/300Wx300H/vim dishwash liquid gel lemon bottle.jpg;$siteResource/images/300Wx300H/vim dishwash liquid gel lemon bottle.jpg;;;images
+;96Wx96H;/96Wx96H/vim dishwash liquid gel lemon bottle.jpg;$siteResource/images/96Wx96H/vim dishwash liquid gel lemon bottle.jpg;;;images
+;65Wx65H;/65Wx65H/vim dishwash liquid gel lemon bottle.jpg;$siteResource/images/65Wx65H/vim dishwash liquid gel lemon bottle.jpg;;;images
+;30Wx30H;/30Wx30H/vim dishwash liquid gel lemon bottle.jpg;$siteResource/images/30Wx30H/vim dishwash liquid gel lemon bottle.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/dew fresh dishwash tub - ginger and lemon.jpg;$siteResource/images/1200Wx1200H/dew fresh dishwash tub - ginger and lemon.jpg;;;images
+;515Wx515H;/515Wx515H/dew fresh dishwash tub - ginger and lemon.jpg;$siteResource/images/515Wx515H/dew fresh dishwash tub - ginger and lemon.jpg;;;images
+;300Wx300H;/300Wx300H/dew fresh dishwash tub - ginger and lemon.jpg;$siteResource/images/300Wx300H/dew fresh dishwash tub - ginger and lemon.jpg;;;images
+;96Wx96H;/96Wx96H/dew fresh dishwash tub - ginger and lemon.jpg;$siteResource/images/96Wx96H/dew fresh dishwash tub - ginger and lemon.jpg;;;images
+;65Wx65H;/65Wx65H/dew fresh dishwash tub - ginger and lemon.jpg;$siteResource/images/65Wx65H/dew fresh dishwash tub - ginger and lemon.jpg;;;images
+;30Wx30H;/30Wx30H/dew fresh dishwash tub - ginger and lemon.jpg;$siteResource/images/30Wx30H/dew fresh dishwash tub - ginger and lemon.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/mtr masala - spicy sambar powder.jpg;$siteResource/images/1200Wx1200H/mtr masala - spicy sambar powder.jpg;;;images
+;515Wx515H;/515Wx515H/mtr masala - spicy sambar powder.jpg;$siteResource/images/515Wx515H/mtr masala - spicy sambar powder.jpg;;;images
+;300Wx300H;/300Wx300H/mtr masala - spicy sambar powder.jpg;$siteResource/images/300Wx300H/mtr masala - spicy sambar powder.jpg;;;images
+;96Wx96H;/96Wx96H/mtr masala - spicy sambar powder.jpg;$siteResource/images/96Wx96H/mtr masala - spicy sambar powder.jpg;;;images
+;65Wx65H;/65Wx65H/mtr masala - spicy sambar powder.jpg;$siteResource/images/65Wx65H/mtr masala - spicy sambar powder.jpg;;;images
+;30Wx30H;/30Wx30H/mtr masala - spicy sambar powder.jpg;$siteResource/images/30Wx30H/mtr masala - spicy sambar powder.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/everest garam masala.jpg;$siteResource/images/1200Wx1200H/everest garam masala.jpg;;;images
+;515Wx515H;/515Wx515H/everest garam masala.jpg;$siteResource/images/515Wx515H/everest garam masala.jpg;;;images
+;300Wx300H;/300Wx300H/everest garam masala.jpg;$siteResource/images/300Wx300H/everest garam masala.jpg;;;images
+;96Wx96H;/96Wx96H/everest garam masala.jpg;$siteResource/images/96Wx96H/everest garam masala.jpg;;;images
+;65Wx65H;/65Wx65H/everest garam masala.jpg;$siteResource/images/65Wx65H/everest garam masala.jpg;;;images
+;30Wx30H;/30Wx30H/everest garam masala.jpg;$siteResource/images/30Wx30H/everest garam masala.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/eastern chicken masala.jpg;$siteResource/images/1200Wx1200H/eastern chicken masala.jpg;;;images
+;515Wx515H;/515Wx515H/eastern chicken masala.jpg;$siteResource/images/515Wx515H/eastern chicken masala.jpg;;;images
+;300Wx300H;/300Wx300H/eastern chicken masala.jpg;$siteResource/images/300Wx300H/eastern chicken masala.jpg;;;images
+;96Wx96H;/96Wx96H/eastern chicken masala.jpg;$siteResource/images/96Wx96H/eastern chicken masala.jpg;;;images
+;65Wx65H;/65Wx65H/eastern chicken masala.jpg;$siteResource/images/65Wx65H/eastern chicken masala.jpg;;;images
+;30Wx30H;/30Wx30H/eastern chicken masala.jpg;$siteResource/images/30Wx30H/eastern chicken masala.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/india gate basmati rice classic.jpg;$siteResource/images/1200Wx1200H/india gate basmati rice classic.jpg;;;images
+;515Wx515H;/515Wx515H/india gate basmati rice classic.jpg;$siteResource/images/515Wx515H/india gate basmati rice classic.jpg;;;images
+;300Wx300H;/300Wx300H/india gate basmati rice classic.jpg;$siteResource/images/300Wx300H/india gate basmati rice classic.jpg;;;images
+;96Wx96H;/96Wx96H/india gate basmati rice classic.jpg;$siteResource/images/96Wx96H/india gate basmati rice classic.jpg;;;images
+;65Wx65H;/65Wx65H/india gate basmati rice classic.jpg;$siteResource/images/65Wx65H/india gate basmati rice classic.jpg;;;images
+;30Wx30H;/30Wx30H/india gate basmati rice classic.jpg;$siteResource/images/30Wx30H/india gate basmati rice classic.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/fortune sona masoori supreme rice.jpg;$siteResource/images/1200Wx1200H/fortune sona masoori supreme rice.jpg;;;images
+;515Wx515H;/515Wx515H/fortune sona masoori supreme rice.jpg;$siteResource/images/515Wx515H/fortune sona masoori supreme rice.jpg;;;images
+;300Wx300H;/300Wx300H/fortune sona masoori supreme rice.jpg;$siteResource/images/300Wx300H/fortune sona masoori supreme rice.jpg;;;images
+;96Wx96H;/96Wx96H/fortune sona masoori supreme rice.jpg;$siteResource/images/96Wx96H/fortune sona masoori supreme rice.jpg;;;images
+;65Wx65H;/65Wx65H/fortune sona masoori supreme rice.jpg;$siteResource/images/65Wx65H/fortune sona masoori supreme rice.jpg;;;images
+;30Wx30H;/30Wx30H/fortune sona masoori supreme rice.jpg;$siteResource/images/30Wx30H/fortune sona masoori supreme rice.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/nutritious brown rice unpolished.jpg;$siteResource/images/1200Wx1200H/nutritious brown rice unpolished.jpg;;;images
+;515Wx515H;/515Wx515H/nutritious brown rice unpolished.jpg;$siteResource/images/515Wx515H/nutritious brown rice unpolished.jpg;;;images
+;300Wx300H;/300Wx300H/nutritious brown rice unpolished.jpg;$siteResource/images/300Wx300H/nutritious brown rice unpolished.jpg;;;images
+;96Wx96H;/96Wx96H/nutritious brown rice unpolished.jpg;$siteResource/images/96Wx96H/nutritious brown rice unpolished.jpg;;;images
+;65Wx65H;/65Wx65H/nutritious brown rice unpolished.jpg;$siteResource/images/65Wx65H/nutritious brown rice unpolished.jpg;;;images
+;30Wx30H;/30Wx30H/nutritious brown rice unpolished.jpg;$siteResource/images/30Wx30H/nutritious brown rice unpolished.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/safe harvest tur dal.jpg;$siteResource/images/1200Wx1200H/safe harvest tur dal.jpg;;;images
+;515Wx515H;/515Wx515H/safe harvest tur dal.jpg;$siteResource/images/515Wx515H/safe harvest tur dal.jpg;;;images
+;300Wx300H;/300Wx300H/safe harvest tur dal.jpg;$siteResource/images/300Wx300H/safe harvest tur dal.jpg;;;images
+;96Wx96H;/96Wx96H/safe harvest tur dal.jpg;$siteResource/images/96Wx96H/safe harvest tur dal.jpg;;;images
+;65Wx65H;/65Wx65H/safe harvest tur dal.jpg;$siteResource/images/65Wx65H/safe harvest tur dal.jpg;;;images
+;30Wx30H;/30Wx30H/safe harvest tur dal.jpg;$siteResource/images/30Wx30H/safe harvest tur dal.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/town grocer raw peanuts.jpg;$siteResource/images/1200Wx1200H/town grocer raw peanuts.jpg;;;images
+;515Wx515H;/515Wx515H/town grocer raw peanuts.jpg;$siteResource/images/515Wx515H/town grocer raw peanuts.jpg;;;images
+;300Wx300H;/300Wx300H/town grocer raw peanuts.jpg;$siteResource/images/300Wx300H/town grocer raw peanuts.jpg;;;images
+;96Wx96H;/96Wx96H/town grocer raw peanuts.jpg;$siteResource/images/96Wx96H/town grocer raw peanuts.jpg;;;images
+;65Wx65H;/65Wx65H/town grocer raw peanuts.jpg;$siteResource/images/65Wx65H/town grocer raw peanuts.jpg;;;images
+;30Wx30H;/30Wx30H/town grocer raw peanuts.jpg;$siteResource/images/30Wx30H/town grocer raw peanuts.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/popular essentials urad gola white.jpg;$siteResource/images/1200Wx1200H/popular essentials urad gola white.jpg;;;images
+;515Wx515H;/515Wx515H/popular essentials urad gola white.jpg;$siteResource/images/515Wx515H/popular essentials urad gola white.jpg;;;images
+;300Wx300H;/300Wx300H/popular essentials urad gola white.jpg;$siteResource/images/300Wx300H/popular essentials urad gola white.jpg;;;images
+;96Wx96H;/96Wx96H/popular essentials urad gola white.jpg;$siteResource/images/96Wx96H/popular essentials urad gola white.jpg;;;images
+;65Wx65H;/65Wx65H/popular essentials urad gola white.jpg;$siteResource/images/65Wx65H/popular essentials urad gola white.jpg;;;images
+;30Wx30H;/30Wx30H/popular essentials urad gola white.jpg;$siteResource/images/30Wx30H/popular essentials urad gola white.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/freedom refined sunflower oil.jpg;$siteResource/images/1200Wx1200H/freedom refined sunflower oil.jpg;;;images
+;515Wx515H;/515Wx515H/freedom refined sunflower oil.jpg;$siteResource/images/515Wx515H/freedom refined sunflower oil.jpg;;;images
+;300Wx300H;/300Wx300H/freedom refined sunflower oil.jpg;$siteResource/images/300Wx300H/freedom refined sunflower oil.jpg;;;images
+;96Wx96H;/96Wx96H/freedom refined sunflower oil.jpg;$siteResource/images/96Wx96H/freedom refined sunflower oil.jpg;;;images
+;65Wx65H;/65Wx65H/freedom refined sunflower oil.jpg;$siteResource/images/65Wx65H/freedom refined sunflower oil.jpg;;;images
+;30Wx30H;/30Wx30H/freedom refined sunflower oil.jpg;$siteResource/images/30Wx30H/freedom refined sunflower oil.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/saffola gold oil.jpg;$siteResource/images/1200Wx1200H/saffola gold oil.jpg;;;images
+;515Wx515H;/515Wx515H/saffola gold oil.jpg;$siteResource/images/515Wx515H/saffola gold oil.jpg;;;images
+;300Wx300H;/300Wx300H/saffola gold oil.jpg;$siteResource/images/300Wx300H/saffola gold oil.jpg;;;images
+;96Wx96H;/96Wx96H/saffola gold oil.jpg;$siteResource/images/96Wx96H/saffola gold oil.jpg;;;images
+;65Wx65H;/65Wx65H/saffola gold oil.jpg;$siteResource/images/65Wx65H/saffola gold oil.jpg;;;images
+;30Wx30H;/30Wx30H/saffola gold oil.jpg;$siteResource/images/30Wx30H/saffola gold oil.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/organic tattva peanut oil.jpg;$siteResource/images/1200Wx1200H/organic tattva peanut oil.jpg;;;images
+;515Wx515H;/515Wx515H/organic tattva peanut oil.jpg;$siteResource/images/515Wx515H/organic tattva peanut oil.jpg;;;images
+;300Wx300H;/300Wx300H/organic tattva peanut oil.jpg;$siteResource/images/300Wx300H/organic tattva peanut oil.jpg;;;images
+;96Wx96H;/96Wx96H/organic tattva peanut oil.jpg;$siteResource/images/96Wx96H/organic tattva peanut oil.jpg;;;images
+;65Wx65H;/65Wx65H/organic tattva peanut oil.jpg;$siteResource/images/65Wx65H/organic tattva peanut oil.jpg;;;images
+;30Wx30H;/30Wx30H/organic tattva peanut oil.jpg;$siteResource/images/30Wx30H/organic tattva peanut oil.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/carrot.jpg;$siteResource/images/1200Wx1200H/carrot.jpg;;;images
+;515Wx515H;/515Wx515H/carrot.jpg;$siteResource/images/515Wx515H/carrot.jpg;;;images
+;300Wx300H;/300Wx300H/carrot.jpg;$siteResource/images/300Wx300H/carrot.jpg;;;images
+;96Wx96H;/96Wx96H/carrot.jpg;$siteResource/images/96Wx96H/carrot.jpg;;;images
+;65Wx65H;/65Wx65H/carrot.jpg;$siteResource/images/65Wx65H/carrot.jpg;;;images
+;30Wx30H;/30Wx30H/carrot.jpg;$siteResource/images/30Wx30H/carrot.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/cabbage.jpg;$siteResource/images/1200Wx1200H/cabbage.jpg;;;images
+;515Wx515H;/515Wx515H/cabbage.jpg;$siteResource/images/515Wx515H/cabbage.jpg;;;images
+;300Wx300H;/300Wx300H/cabbage.jpg;$siteResource/images/300Wx300H/cabbage.jpg;;;images
+;96Wx96H;/96Wx96H/cabbage.jpg;$siteResource/images/96Wx96H/cabbage.jpg;;;images
+;65Wx65H;/65Wx65H/cabbage.jpg;$siteResource/images/65Wx65H/cabbage.jpg;;;images
+;30Wx30H;/30Wx30H/cabbage.jpg;$siteResource/images/30Wx30H/cabbage.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/beetroot.jpg;$siteResource/images/1200Wx1200H/beetroot.jpg;;;images
+;515Wx515H;/515Wx515H/beetroot.jpg;$siteResource/images/515Wx515H/beetroot.jpg;;;images
+;300Wx300H;/300Wx300H/beetroot.jpg;$siteResource/images/300Wx300H/beetroot.jpg;;;images
+;96Wx96H;/96Wx96H/beetroot.jpg;$siteResource/images/96Wx96H/beetroot.jpg;;;images
+;65Wx65H;/65Wx65H/beetroot.jpg;$siteResource/images/65Wx65H/beetroot.jpg;;;images
+;30Wx30H;/30Wx30H/beetroot.jpg;$siteResource/images/30Wx30H/beetroot.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/apple.jpg;$siteResource/images/1200Wx1200H/apple.jpg;;;images
+;515Wx515H;/515Wx515H/apple.jpg;$siteResource/images/515Wx515H/apple.jpg;;;images
+;300Wx300H;/300Wx300H/apple.jpg;$siteResource/images/300Wx300H/apple.jpg;;;images
+;96Wx96H;/96Wx96H/apple.jpg;$siteResource/images/96Wx96H/apple.jpg;;;images
+;65Wx65H;/65Wx65H/apple.jpg;$siteResource/images/65Wx65H/apple.jpg;;;images
+;30Wx30H;/30Wx30H/apple.jpg;$siteResource/images/30Wx30H/apple.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/banana.jpg;$siteResource/images/1200Wx1200H/banana.jpg;;;images
+;515Wx515H;/515Wx515H/banana.jpg;$siteResource/images/515Wx515H/banana.jpg;;;images
+;300Wx300H;/300Wx300H/banana.jpg;$siteResource/images/300Wx300H/banana.jpg;;;images
+;96Wx96H;/96Wx96H/banana.jpg;$siteResource/images/96Wx96H/banana.jpg;;;images
+;65Wx65H;/65Wx65H/banana.jpg;$siteResource/images/65Wx65H/banana.jpg;;;images
+;30Wx30H;/30Wx30H/banana.jpg;$siteResource/images/30Wx30H/banana.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/grapes.jpg;$siteResource/images/1200Wx1200H/grapes.jpg;;;images
+;515Wx515H;/515Wx515H/grapes.jpg;$siteResource/images/515Wx515H/grapes.jpg;;;images
+;300Wx300H;/300Wx300H/grapes.jpg;$siteResource/images/300Wx300H/grapes.jpg;;;images
+;96Wx96H;/96Wx96H/grapes.jpg;$siteResource/images/96Wx96H/grapes.jpg;;;images
+;65Wx65H;/65Wx65H/grapes.jpg;$siteResource/images/65Wx65H/grapes.jpg;;;images
+;30Wx30H;/30Wx30H/grapes.jpg;$siteResource/images/30Wx30H/grapes.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/pomegranate shelled.jpg;$siteResource/images/1200Wx1200H/pomegranate shelled.jpg;;;images
+;515Wx515H;/515Wx515H/pomegranate shelled.jpg;$siteResource/images/515Wx515H/pomegranate shelled.jpg;;;images
+;300Wx300H;/300Wx300H/pomegranate shelled.jpg;$siteResource/images/300Wx300H/pomegranate shelled.jpg;;;images
+;96Wx96H;/96Wx96H/pomegranate shelled.jpg;$siteResource/images/96Wx96H/pomegranate shelled.jpg;;;images
+;65Wx65H;/65Wx65H/pomegranate shelled.jpg;$siteResource/images/65Wx65H/pomegranate shelled.jpg;;;images
+;30Wx30H;/30Wx30H/pomegranate shelled.jpg;$siteResource/images/30Wx30H/pomegranate shelled.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/papaya diced.jpg;$siteResource/images/1200Wx1200H/papaya diced.jpg;;;images
+;515Wx515H;/515Wx515H/papaya diced.jpg;$siteResource/images/515Wx515H/papaya diced.jpg;;;images
+;300Wx300H;/300Wx300H/papaya diced.jpg;$siteResource/images/300Wx300H/papaya diced.jpg;;;images
+;96Wx96H;/96Wx96H/papaya diced.jpg;$siteResource/images/96Wx96H/papaya diced.jpg;;;images
+;65Wx65H;/65Wx65H/papaya diced.jpg;$siteResource/images/65Wx65H/papaya diced.jpg;;;images
+;30Wx30H;/30Wx30H/papaya diced.jpg;$siteResource/images/30Wx30H/papaya diced.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/pineapple slice.jpg;$siteResource/images/1200Wx1200H/pineapple slice.jpg;;;images
+;515Wx515H;/515Wx515H/pineapple slice.jpg;$siteResource/images/515Wx515H/pineapple slice.jpg;;;images
+;300Wx300H;/300Wx300H/pineapple slice.jpg;$siteResource/images/300Wx300H/pineapple slice.jpg;;;images
+;96Wx96H;/96Wx96H/pineapple slice.jpg;$siteResource/images/96Wx96H/pineapple slice.jpg;;;images
+;65Wx65H;/65Wx65H/pineapple slice.jpg;$siteResource/images/65Wx65H/pineapple slice.jpg;;;images
+;30Wx30H;/30Wx30H/pineapple slice.jpg;$siteResource/images/30Wx30H/pineapple slice.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/spinach.jpg;$siteResource/images/1200Wx1200H/spinach.jpg;;;images
+;515Wx515H;/515Wx515H/spinach.jpg;$siteResource/images/515Wx515H/spinach.jpg;;;images
+;300Wx300H;/300Wx300H/spinach.jpg;$siteResource/images/300Wx300H/spinach.jpg;;;images
+;96Wx96H;/96Wx96H/spinach.jpg;$siteResource/images/96Wx96H/spinach.jpg;;;images
+;65Wx65H;/65Wx65H/spinach.jpg;$siteResource/images/65Wx65H/spinach.jpg;;;images
+;30Wx30H;/30Wx30H/spinach.jpg;$siteResource/images/30Wx30H/spinach.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/mint(pudina aaku).jpg;$siteResource/images/1200Wx1200H/mint(pudina aaku).jpg;;;images
+;515Wx515H;/515Wx515H/mint(pudina aaku).jpg;$siteResource/images/515Wx515H/mint(pudina aaku).jpg;;;images
+;300Wx300H;/300Wx300H/mint(pudina aaku).jpg;$siteResource/images/300Wx300H/mint(pudina aaku).jpg;;;images
+;96Wx96H;/96Wx96H/mint(pudina aaku).jpg;$siteResource/images/96Wx96H/mint(pudina aaku).jpg;;;images
+;65Wx65H;/65Wx65H/mint(pudina aaku).jpg;$siteResource/images/65Wx65H/mint(pudina aaku).jpg;;;images
+;30Wx30H;/30Wx30H/mint(pudina aaku).jpg;$siteResource/images/30Wx30H/mint(pudina aaku).jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/curry leaves.jpg;$siteResource/images/1200Wx1200H/curry leaves.jpg;;;images
+;515Wx515H;/515Wx515H/curry leaves.jpg;$siteResource/images/515Wx515H/curry leaves.jpg;;;images
+;300Wx300H;/300Wx300H/curry leaves.jpg;$siteResource/images/300Wx300H/curry leaves.jpg;;;images
+;96Wx96H;/96Wx96H/curry leaves.jpg;$siteResource/images/96Wx96H/curry leaves.jpg;;;images
+;65Wx65H;/65Wx65H/curry leaves.jpg;$siteResource/images/65Wx65H/curry leaves.jpg;;;images
+;30Wx30H;/30Wx30H/curry leaves.jpg;$siteResource/images/30Wx30H/curry leaves.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/doritos nacho chips - cheese flavour.jpg;$siteResource/images/1200Wx1200H/doritos nacho chips - cheese flavour.jpg;;;images
+;515Wx515H;/515Wx515H/doritos nacho chips - cheese flavour.jpg;$siteResource/images/515Wx515H/doritos nacho chips - cheese flavour.jpg;;;images
+;300Wx300H;/300Wx300H/doritos nacho chips - cheese flavour.jpg;$siteResource/images/300Wx300H/doritos nacho chips - cheese flavour.jpg;;;images
+;96Wx96H;/96Wx96H/doritos nacho chips - cheese flavour.jpg;$siteResource/images/96Wx96H/doritos nacho chips - cheese flavour.jpg;;;images
+;65Wx65H;/65Wx65H/doritos nacho chips - cheese flavour.jpg;$siteResource/images/65Wx65H/doritos nacho chips - cheese flavour.jpg;;;images
+;30Wx30H;/30Wx30H/doritos nacho chips - cheese flavour.jpg;$siteResource/images/30Wx30H/doritos nacho chips - cheese flavour.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/haldiram's moong dal.jpg;$siteResource/images/1200Wx1200H/haldiram's moong dal.jpg;;;images
+;515Wx515H;/515Wx515H/haldiram's moong dal.jpg;$siteResource/images/515Wx515H/haldiram's moong dal.jpg;;;images
+;300Wx300H;/300Wx300H/haldiram's moong dal.jpg;$siteResource/images/300Wx300H/haldiram's moong dal.jpg;;;images
+;96Wx96H;/96Wx96H/haldiram's moong dal.jpg;$siteResource/images/96Wx96H/haldiram's moong dal.jpg;;;images
+;65Wx65H;/65Wx65H/haldiram's moong dal.jpg;$siteResource/images/65Wx65H/haldiram's moong dal.jpg;;;images
+;30Wx30H;/30Wx30H/haldiram's moong dal.jpg;$siteResource/images/30Wx30H/haldiram's moong dal.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/pringles chips - desi  masala tadka.jpg;$siteResource/images/1200Wx1200H/pringles chips - desi  masala tadka.jpg;;;images
+;515Wx515H;/515Wx515H/pringles chips - desi  masala tadka.jpg;$siteResource/images/515Wx515H/pringles chips - desi  masala tadka.jpg;;;images
+;300Wx300H;/300Wx300H/pringles chips - desi  masala tadka.jpg;$siteResource/images/300Wx300H/pringles chips - desi  masala tadka.jpg;;;images
+;96Wx96H;/96Wx96H/pringles chips - desi  masala tadka.jpg;$siteResource/images/96Wx96H/pringles chips - desi  masala tadka.jpg;;;images
+;65Wx65H;/65Wx65H/pringles chips - desi  masala tadka.jpg;$siteResource/images/65Wx65H/pringles chips - desi  masala tadka.jpg;;;images
+;30Wx30H;/30Wx30H/pringles chips - desi  masala tadka.jpg;$siteResource/images/30Wx30H/pringles chips - desi  masala tadka.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/swastiks  mango pickle avakaya.jpg;$siteResource/images/1200Wx1200H/swastiks  mango pickle avakaya.jpg;;;images
+;515Wx515H;/515Wx515H/swastiks  mango pickle avakaya.jpg;$siteResource/images/515Wx515H/swastiks  mango pickle avakaya.jpg;;;images
+;300Wx300H;/300Wx300H/swastiks  mango pickle avakaya.jpg;$siteResource/images/300Wx300H/swastiks  mango pickle avakaya.jpg;;;images
+;96Wx96H;/96Wx96H/swastiks  mango pickle avakaya.jpg;$siteResource/images/96Wx96H/swastiks  mango pickle avakaya.jpg;;;images
+;65Wx65H;/65Wx65H/swastiks  mango pickle avakaya.jpg;$siteResource/images/65Wx65H/swastiks  mango pickle avakaya.jpg;;;images
+;30Wx30H;/30Wx30H/swastiks  mango pickle avakaya.jpg;$siteResource/images/30Wx30H/swastiks  mango pickle avakaya.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/keya malabar chicken pickle.jpg;$siteResource/images/1200Wx1200H/keya malabar chicken pickle.jpg;;;images
+;515Wx515H;/515Wx515H/keya malabar chicken pickle.jpg;$siteResource/images/515Wx515H/keya malabar chicken pickle.jpg;;;images
+;300Wx300H;/300Wx300H/keya malabar chicken pickle.jpg;$siteResource/images/300Wx300H/keya malabar chicken pickle.jpg;;;images
+;96Wx96H;/96Wx96H/keya malabar chicken pickle.jpg;$siteResource/images/96Wx96H/keya malabar chicken pickle.jpg;;;images
+;65Wx65H;/65Wx65H/keya malabar chicken pickle.jpg;$siteResource/images/65Wx65H/keya malabar chicken pickle.jpg;;;images
+;30Wx30H;/30Wx30H/keya malabar chicken pickle.jpg;$siteResource/images/30Wx30H/keya malabar chicken pickle.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/priya gongura pickle.jpg;$siteResource/images/1200Wx1200H/priya gongura pickle.jpg;;;images
+;515Wx515H;/515Wx515H/priya gongura pickle.jpg;$siteResource/images/515Wx515H/priya gongura pickle.jpg;;;images
+;300Wx300H;/300Wx300H/priya gongura pickle.jpg;$siteResource/images/300Wx300H/priya gongura pickle.jpg;;;images
+;96Wx96H;/96Wx96H/priya gongura pickle.jpg;$siteResource/images/96Wx96H/priya gongura pickle.jpg;;;images
+;65Wx65H;/65Wx65H/priya gongura pickle.jpg;$siteResource/images/65Wx65H/priya gongura pickle.jpg;;;images
+;30Wx30H;/30Wx30H/priya gongura pickle.jpg;$siteResource/images/30Wx30H/priya gongura pickle.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/kellogg's corn flakes.jpg;$siteResource/images/1200Wx1200H/kellogg's corn flakes.jpg;;;images
+;515Wx515H;/515Wx515H/kellogg's corn flakes.jpg;$siteResource/images/515Wx515H/kellogg's corn flakes.jpg;;;images
+;300Wx300H;/300Wx300H/kellogg's corn flakes.jpg;$siteResource/images/300Wx300H/kellogg's corn flakes.jpg;;;images
+;96Wx96H;/96Wx96H/kellogg's corn flakes.jpg;$siteResource/images/96Wx96H/kellogg's corn flakes.jpg;;;images
+;65Wx65H;/65Wx65H/kellogg's corn flakes.jpg;$siteResource/images/65Wx65H/kellogg's corn flakes.jpg;;;images
+;30Wx30H;/30Wx30H/kellogg's corn flakes.jpg;$siteResource/images/30Wx30H/kellogg's corn flakes.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/alpino peanut butter super oats chocolate.jpg;$siteResource/images/1200Wx1200H/alpino peanut butter super oats chocolate.jpg;;;images
+;515Wx515H;/515Wx515H/alpino peanut butter super oats chocolate.jpg;$siteResource/images/515Wx515H/alpino peanut butter super oats chocolate.jpg;;;images
+;300Wx300H;/300Wx300H/alpino peanut butter super oats chocolate.jpg;$siteResource/images/300Wx300H/alpino peanut butter super oats chocolate.jpg;;;images
+;96Wx96H;/96Wx96H/alpino peanut butter super oats chocolate.jpg;$siteResource/images/96Wx96H/alpino peanut butter super oats chocolate.jpg;;;images
+;65Wx65H;/65Wx65H/alpino peanut butter super oats chocolate.jpg;$siteResource/images/65Wx65H/alpino peanut butter super oats chocolate.jpg;;;images
+;30Wx30H;/30Wx30H/alpino peanut butter super oats chocolate.jpg;$siteResource/images/30Wx30H/alpino peanut butter super oats chocolate.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/britannia 100% whole wheat bread.jpg;$siteResource/images/1200Wx1200H/britannia 100% whole wheat bread.jpg;;;images
+;515Wx515H;/515Wx515H/britannia 100% whole wheat bread.jpg;$siteResource/images/515Wx515H/britannia 100% whole wheat bread.jpg;;;images
+;300Wx300H;/300Wx300H/britannia 100% whole wheat bread.jpg;$siteResource/images/300Wx300H/britannia 100% whole wheat bread.jpg;;;images
+;96Wx96H;/96Wx96H/britannia 100% whole wheat bread.jpg;$siteResource/images/96Wx96H/britannia 100% whole wheat bread.jpg;;;images
+;65Wx65H;/65Wx65H/britannia 100% whole wheat bread.jpg;$siteResource/images/65Wx65H/britannia 100% whole wheat bread.jpg;;;images
+;30Wx30H;/30Wx30H/britannia 100% whole wheat bread.jpg;$siteResource/images/30Wx30H/britannia 100% whole wheat bread.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/sunfeast yippee! magic masala.jpg;$siteResource/images/1200Wx1200H/sunfeast yippee! magic masala.jpg;;;images
+;515Wx515H;/515Wx515H/sunfeast yippee! magic masala.jpg;$siteResource/images/515Wx515H/sunfeast yippee! magic masala.jpg;;;images
+;300Wx300H;/300Wx300H/sunfeast yippee! magic masala.jpg;$siteResource/images/300Wx300H/sunfeast yippee! magic masala.jpg;;;images
+;96Wx96H;/96Wx96H/sunfeast yippee! magic masala.jpg;$siteResource/images/96Wx96H/sunfeast yippee! magic masala.jpg;;;images
+;65Wx65H;/65Wx65H/sunfeast yippee! magic masala.jpg;$siteResource/images/65Wx65H/sunfeast yippee! magic masala.jpg;;;images
+;30Wx30H;/30Wx30H/sunfeast yippee! magic masala.jpg;$siteResource/images/30Wx30H/sunfeast yippee! magic masala.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/borges spaghetti durum wheat pasta.jpg;$siteResource/images/1200Wx1200H/borges spaghetti durum wheat pasta.jpg;;;images
+;515Wx515H;/515Wx515H/borges spaghetti durum wheat pasta.jpg;$siteResource/images/515Wx515H/borges spaghetti durum wheat pasta.jpg;;;images
+;300Wx300H;/300Wx300H/borges spaghetti durum wheat pasta.jpg;$siteResource/images/300Wx300H/borges spaghetti durum wheat pasta.jpg;;;images
+;96Wx96H;/96Wx96H/borges spaghetti durum wheat pasta.jpg;$siteResource/images/96Wx96H/borges spaghetti durum wheat pasta.jpg;;;images
+;65Wx65H;/65Wx65H/borges spaghetti durum wheat pasta.jpg;$siteResource/images/65Wx65H/borges spaghetti durum wheat pasta.jpg;;;images
+;30Wx30H;/30Wx30H/borges spaghetti durum wheat pasta.jpg;$siteResource/images/30Wx30H/borges spaghetti durum wheat pasta.jpg;;;images
+
+;1200Wx1200H;/1200Wx1200H/mtr multigrain dosa.jpg;$siteResource/images/1200Wx1200H/mtr multigrain dosa.jpg;;;images
+;515Wx515H;/515Wx515H/mtr multigrain dosa.jpg;$siteResource/images/515Wx515H/mtr multigrain dosa.jpg;;;images
+;300Wx300H;/300Wx300H/mtr multigrain dosa.jpg;$siteResource/images/300Wx300H/mtr multigrain dosa.jpg;;;images
+;96Wx96H;/96Wx96H/mtr multigrain dosa.jpg;$siteResource/images/96Wx96H/mtr multigrain dosa.jpg;;;images
+;65Wx65H;/65Wx65H/mtr multigrain dosa.jpg;$siteResource/images/65Wx65H/mtr multigrain dosa.jpg;;;images
+;30Wx30H;/30Wx30H/mtr multigrain dosa.jpg;$siteResource/images/30Wx30H/mtr multigrain dosa.jpg;;;images
+
+
+# Create Media Containers
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+
+;monster energy drink;/1200Wx1200H/monster energy drink.jpg,/515Wx515H/monster energy drink.jpg,/300Wx300H/monster energy drink.jpg,/96Wx96H/monster energy drink.jpg,/65Wx65H/monster energy drink.jpg,/30Wx30H/monster energy drink.jpg;
+
+;sting energy drink;/1200Wx1200H/sting energy drink.jpg,/515Wx515H/sting energy drink.jpg,/300Wx300H/sting energy drink.jpg,/96Wx96H/sting energy drink.jpg,/65Wx65H/sting energy drink.jpg,/30Wx30H/sting energy drink.jpg;
+
+;red bull;/1200Wx1200H/red bull.jpg,/515Wx515H/red bull.jpg,/300Wx300H/red bull.jpg,/96Wx96H/red bull.jpg,/65Wx65H/red bull.jpg,/30Wx30H/red bull.jpg;
+
+;coca cola;/1200Wx1200H/coca cola.jpg,/515Wx515H/coca cola.jpg,/300Wx300H/coca cola.jpg,/96Wx96H/coca cola.jpg,/65Wx65H/coca cola.jpg,/30Wx30H/coca cola.jpg;
+
+;sprite;/1200Wx1200H/sprite.jpg,/515Wx515H/sprite.jpg,/300Wx300H/sprite.jpg,/96Wx96H/sprite.jpg,/65Wx65H/sprite.jpg,/30Wx30H/sprite.jpg;
+
+;thums up;/1200Wx1200H/thums up.jpg,/515Wx515H/thums up.jpg,/300Wx300H/thums up.jpg,/96Wx96H/thums up.jpg,/65Wx65H/thums up.jpg,/30Wx30H/thums up.jpg;
+
+;chocolate milkshake;/1200Wx1200H/chocolate milkshake.jpg,/515Wx515H/chocolate milkshake.jpg,/300Wx300H/chocolate milkshake.jpg,/96Wx96H/chocolate milkshake.jpg,/65Wx65H/chocolate milkshake.jpg,/30Wx30H/chocolate milkshake.jpg;
+
+;mango milkshake;/1200Wx1200H/mango milkshake.jpg,/515Wx515H/mango milkshake.jpg,/300Wx300H/mango milkshake.jpg,/96Wx96H/mango milkshake.jpg,/65Wx65H/mango milkshake.jpg,/30Wx30H/mango milkshake.jpg;
+
+;strawberry milkshake;/1200Wx1200H/strawberry milkshake.jpg,/515Wx515H/strawberry milkshake.jpg,/300Wx300H/strawberry milkshake.jpg,/96Wx96H/strawberry milkshake.jpg,/65Wx65H/strawberry milkshake.jpg,/30Wx30H/strawberry milkshake.jpg;
+
+;grape juice;/1200Wx1200H/grape juice.jpg,/515Wx515H/grape juice.jpg,/300Wx300H/grape juice.jpg,/96Wx96H/grape juice.jpg,/65Wx65H/grape juice.jpg,/30Wx30H/grape juice.jpg;
+
+;orange juice;/1200Wx1200H/orange juice.jpg,/515Wx515H/orange juice.jpg,/300Wx300H/orange juice.jpg,/96Wx96H/orange juice.jpg,/65Wx65H/orange juice.jpg,/30Wx30H/orange juice.jpg;
+
+;mango juice;/1200Wx1200H/mango juice.jpg,/515Wx515H/mango juice.jpg,/300Wx300H/mango juice.jpg,/96Wx96H/mango juice.jpg,/65Wx65H/mango juice.jpg,/30Wx30H/mango juice.jpg;
+
+;biotique ocean kelp shampoo;/1200Wx1200H/biotique ocean kelp shampoo.jpg,/515Wx515H/biotique ocean kelp shampoo.jpg,/300Wx300H/biotique ocean kelp shampoo.jpg,/96Wx96H/biotique ocean kelp shampoo.jpg,/65Wx65H/biotique ocean kelp shampoo.jpg,/30Wx30H/biotique ocean kelp shampoo.jpg;
+
+;himalaya neem face wash;/1200Wx1200H/himalaya neem face wash.jpg,/515Wx515H/himalaya neem face wash.jpg,/300Wx300H/himalaya neem face wash.jpg,/96Wx96H/himalaya neem face wash.jpg,/65Wx65H/himalaya neem face wash.jpg,/30Wx30H/himalaya neem face wash.jpg;
+
+;bajaj almond drops hair oil;/1200Wx1200H/bajaj almond drops hair oil.jpg,/515Wx515H/bajaj almond drops hair oil.jpg,/300Wx300H/bajaj almond drops hair oil.jpg,/96Wx96H/bajaj almond drops hair oil.jpg,/65Wx65H/bajaj almond drops hair oil.jpg,/30Wx30H/bajaj almond drops hair oil.jpg;
+
+;lizol disinfectant surface and floor cleaner;/1200Wx1200H/lizol disinfectant surface and floor cleaner.jpg,/515Wx515H/lizol disinfectant surface and floor cleaner.jpg,/300Wx300H/lizol disinfectant surface and floor cleaner.jpg,/96Wx96H/lizol disinfectant surface and floor cleaner.jpg,/65Wx65H/lizol disinfectant surface and floor cleaner.jpg,/30Wx30H/lizol disinfectant surface and floor cleaner.jpg;
+
+;dettol lime disinfectant floor cleaner;/1200Wx1200H/dettol lime disinfectant floor cleaner.jpg,/515Wx515H/dettol lime disinfectant floor cleaner.jpg,/300Wx300H/dettol lime disinfectant floor cleaner.jpg,/96Wx96H/dettol lime disinfectant floor cleaner.jpg,/65Wx65H/dettol lime disinfectant floor cleaner.jpg,/30Wx30H/dettol lime disinfectant floor cleaner.jpg;
+
+;colin glass and surface cleaner liquid spray;/1200Wx1200H/colin glass and surface cleaner liquid spray.jpg,/515Wx515H/colin glass and surface cleaner liquid spray.jpg,/300Wx300H/colin glass and surface cleaner liquid spray.jpg,/96Wx96H/colin glass and surface cleaner liquid spray.jpg,/65Wx65H/colin glass and surface cleaner liquid spray.jpg,/30Wx30H/colin glass and surface cleaner liquid spray.jpg;
+
+;ariel detergent washing powder;/1200Wx1200H/ariel detergent washing powder.jpg,/515Wx515H/ariel detergent washing powder.jpg,/300Wx300H/ariel detergent washing powder.jpg,/96Wx96H/ariel detergent washing powder.jpg,/65Wx65H/ariel detergent washing powder.jpg,/30Wx30H/ariel detergent washing powder.jpg;
+
+;surf excel easy wash detergent powder;/1200Wx1200H/surf excel easy wash detergent powder.jpg,/515Wx515H/surf excel easy wash detergent powder.jpg,/300Wx300H/surf excel easy wash detergent powder.jpg,/96Wx96H/surf excel easy wash detergent powder.jpg,/65Wx65H/surf excel easy wash detergent powder.jpg,/30Wx30H/surf excel easy wash detergent powder.jpg;
+
+;rin advanced detergent powder;/1200Wx1200H/rin advanced detergent powder.jpg,/515Wx515H/rin advanced detergent powder.jpg,/300Wx300H/rin advanced detergent powder.jpg,/96Wx96H/rin advanced detergent powder.jpg,/65Wx65H/rin advanced detergent powder.jpg,/30Wx30H/rin advanced detergent powder.jpg;
+
+;exo dishwash bar;/1200Wx1200H/exo dishwash bar.jpg,/515Wx515H/exo dishwash bar.jpg,/300Wx300H/exo dishwash bar.jpg,/96Wx96H/exo dishwash bar.jpg,/65Wx65H/exo dishwash bar.jpg,/30Wx30H/exo dishwash bar.jpg;
+
+;vim dishwash liquid gel lemon bottle;/1200Wx1200H/vim dishwash liquid gel lemon bottle.jpg,/515Wx515H/vim dishwash liquid gel lemon bottle.jpg,/300Wx300H/vim dishwash liquid gel lemon bottle.jpg,/96Wx96H/vim dishwash liquid gel lemon bottle.jpg,/65Wx65H/vim dishwash liquid gel lemon bottle.jpg,/30Wx30H/vim dishwash liquid gel lemon bottle.jpg;
+
+;dew fresh dishwash tub - ginger and lemon;/1200Wx1200H/dew fresh dishwash tub - ginger and lemon.jpg,/515Wx515H/dew fresh dishwash tub - ginger and lemon.jpg,/300Wx300H/dew fresh dishwash tub - ginger and lemon.jpg,/96Wx96H/dew fresh dishwash tub - ginger and lemon.jpg,/65Wx65H/dew fresh dishwash tub - ginger and lemon.jpg,/30Wx30H/dew fresh dishwash tub - ginger and lemon.jpg;
+
+;mtr masala - spicy sambar powder;/1200Wx1200H/mtr masala - spicy sambar powder.jpg,/515Wx515H/mtr masala - spicy sambar powder.jpg,/300Wx300H/mtr masala - spicy sambar powder.jpg,/96Wx96H/mtr masala - spicy sambar powder.jpg,/65Wx65H/mtr masala - spicy sambar powder.jpg,/30Wx30H/mtr masala - spicy sambar powder.jpg;
+
+;everest garam masala;/1200Wx1200H/everest garam masala.jpg,/515Wx515H/everest garam masala.jpg,/300Wx300H/everest garam masala.jpg,/96Wx96H/everest garam masala.jpg,/65Wx65H/everest garam masala.jpg,/30Wx30H/everest garam masala.jpg;
+
+;eastern chicken masala;/1200Wx1200H/eastern chicken masala.jpg,/515Wx515H/eastern chicken masala.jpg,/300Wx300H/eastern chicken masala.jpg,/96Wx96H/eastern chicken masala.jpg,/65Wx65H/eastern chicken masala.jpg,/30Wx30H/eastern chicken masala.jpg;
+
+;india gate basmati rice classic;/1200Wx1200H/india gate basmati rice classic.jpg,/515Wx515H/india gate basmati rice classic.jpg,/300Wx300H/india gate basmati rice classic.jpg,/96Wx96H/india gate basmati rice classic.jpg,/65Wx65H/india gate basmati rice classic.jpg,/30Wx30H/india gate basmati rice classic.jpg;
+
+;fortune sona masoori supreme rice;/1200Wx1200H/fortune sona masoori supreme rice.jpg,/515Wx515H/fortune sona masoori supreme rice.jpg,/300Wx300H/fortune sona masoori supreme rice.jpg,/96Wx96H/fortune sona masoori supreme rice.jpg,/65Wx65H/fortune sona masoori supreme rice.jpg,/30Wx30H/fortune sona masoori supreme rice.jpg;
+
+;nutritious brown rice unpolished;/1200Wx1200H/nutritious brown rice unpolished.jpg,/515Wx515H/nutritious brown rice unpolished.jpg,/300Wx300H/nutritious brown rice unpolished.jpg,/96Wx96H/nutritious brown rice unpolished.jpg,/65Wx65H/nutritious brown rice unpolished.jpg,/30Wx30H/nutritious brown rice unpolished.jpg;
+
+;safe harvest tur dal;/1200Wx1200H/safe harvest tur dal.jpg,/515Wx515H/safe harvest tur dal.jpg,/300Wx300H/safe harvest tur dal.jpg,/96Wx96H/safe harvest tur dal.jpg,/65Wx65H/safe harvest tur dal.jpg,/30Wx30H/safe harvest tur dal.jpg;
+
+;town grocer raw peanuts;/1200Wx1200H/town grocer raw peanuts.jpg,/515Wx515H/town grocer raw peanuts.jpg,/300Wx300H/town grocer raw peanuts.jpg,/96Wx96H/town grocer raw peanuts.jpg,/65Wx65H/town grocer raw peanuts.jpg,/30Wx30H/town grocer raw peanuts.jpg;
+
+;popular essentials urad gola white;/1200Wx1200H/popular essentials urad gola white.jpg,/515Wx515H/popular essentials urad gola white.jpg,/300Wx300H/popular essentials urad gola white.jpg,/96Wx96H/popular essentials urad gola white.jpg,/65Wx65H/popular essentials urad gola white.jpg,/30Wx30H/popular essentials urad gola white.jpg;
+
+;freedom refined sunflower oil;/1200Wx1200H/freedom refined sunflower oil.jpg,/515Wx515H/freedom refined sunflower oil.jpg,/300Wx300H/freedom refined sunflower oil.jpg,/96Wx96H/freedom refined sunflower oil.jpg,/65Wx65H/freedom refined sunflower oil.jpg,/30Wx30H/freedom refined sunflower oil.jpg;
+
+;saffola gold oil;/1200Wx1200H/saffola gold oil.jpg,/515Wx515H/saffola gold oil.jpg,/300Wx300H/saffola gold oil.jpg,/96Wx96H/saffola gold oil.jpg,/65Wx65H/saffola gold oil.jpg,/30Wx30H/saffola gold oil.jpg;
+
+;organic tattva peanut oil;/1200Wx1200H/organic tattva peanut oil.jpg,/515Wx515H/organic tattva peanut oil.jpg,/300Wx300H/organic tattva peanut oil.jpg,/96Wx96H/organic tattva peanut oil.jpg,/65Wx65H/organic tattva peanut oil.jpg,/30Wx30H/organic tattva peanut oil.jpg;
+
+;carrot;/1200Wx1200H/carrot.jpg,/515Wx515H/carrot.jpg,/300Wx300H/carrot.jpg,/96Wx96H/carrot.jpg,/65Wx65H/carrot.jpg,/30Wx30H/carrot.jpg;
+
+;cabbage;/1200Wx1200H/cabbage.jpg,/515Wx515H/cabbage.jpg,/300Wx300H/cabbage.jpg,/96Wx96H/cabbage.jpg,/65Wx65H/cabbage.jpg,/30Wx30H/cabbage.jpg;
+
+;beetroot;/1200Wx1200H/beetroot.jpg,/515Wx515H/beetroot.jpg,/300Wx300H/beetroot.jpg,/96Wx96H/beetroot.jpg,/65Wx65H/beetroot.jpg,/30Wx30H/beetroot.jpg;
+
+;apple;/1200Wx1200H/apple.jpg,/515Wx515H/apple.jpg,/300Wx300H/apple.jpg,/96Wx96H/apple.jpg,/65Wx65H/apple.jpg,/30Wx30H/apple.jpg;
+
+;banana;/1200Wx1200H/banana.jpg,/515Wx515H/banana.jpg,/300Wx300H/banana.jpg,/96Wx96H/banana.jpg,/65Wx65H/banana.jpg,/30Wx30H/banana.jpg;
+
+;grapes;/1200Wx1200H/grapes.jpg,/515Wx515H/grapes.jpg,/300Wx300H/grapes.jpg,/96Wx96H/grapes.jpg,/65Wx65H/grapes.jpg,/30Wx30H/grapes.jpg;
+
+;pomegranate shelled;/1200Wx1200H/pomegranate shelled.jpg,/515Wx515H/pomegranate shelled.jpg,/300Wx300H/pomegranate shelled.jpg,/96Wx96H/pomegranate shelled.jpg,/65Wx65H/pomegranate shelled.jpg,/30Wx30H/pomegranate shelled.jpg;
+
+;papaya diced;/1200Wx1200H/papaya diced.jpg,/515Wx515H/papaya diced.jpg,/300Wx300H/papaya diced.jpg,/96Wx96H/papaya diced.jpg,/65Wx65H/papaya diced.jpg,/30Wx30H/papaya diced.jpg;
+
+;pineapple slice;/1200Wx1200H/pineapple slice.jpg,/515Wx515H/pineapple slice.jpg,/300Wx300H/pineapple slice.jpg,/96Wx96H/pineapple slice.jpg,/65Wx65H/pineapple slice.jpg,/30Wx30H/pineapple slice.jpg;
+
+;spinach;/1200Wx1200H/spinach.jpg,/515Wx515H/spinach.jpg,/300Wx300H/spinach.jpg,/96Wx96H/spinach.jpg,/65Wx65H/spinach.jpg,/30Wx30H/spinach.jpg;
+
+;mint(pudina aaku);/1200Wx1200H/mint(pudina aaku).jpg,/515Wx515H/mint(pudina aaku).jpg,/300Wx300H/mint(pudina aaku).jpg,/96Wx96H/mint(pudina aaku).jpg,/65Wx65H/mint(pudina aaku).jpg,/30Wx30H/mint(pudina aaku).jpg;
+
+;curry leaves;/1200Wx1200H/curry leaves.jpg,/515Wx515H/curry leaves.jpg,/300Wx300H/curry leaves.jpg,/96Wx96H/curry leaves.jpg,/65Wx65H/curry leaves.jpg,/30Wx30H/curry leaves.jpg;
+
+;doritos nacho chips - cheese flavour;/1200Wx1200H/doritos nacho chips - cheese flavour.jpg,/515Wx515H/doritos nacho chips - cheese flavour.jpg,/300Wx300H/doritos nacho chips - cheese flavour.jpg,/96Wx96H/doritos nacho chips - cheese flavour.jpg,/65Wx65H/doritos nacho chips - cheese flavour.jpg,/30Wx30H/doritos nacho chips - cheese flavour.jpg;
+
+;haldiram's moong dal;/1200Wx1200H/haldiram's moong dal.jpg,/515Wx515H/haldiram's moong dal.jpg,/300Wx300H/haldiram's moong dal.jpg,/96Wx96H/haldiram's moong dal.jpg,/65Wx65H/haldiram's moong dal.jpg,/30Wx30H/haldiram's moong dal.jpg;
+
+;pringles chips - desi  masala tadka;/1200Wx1200H/pringles chips - desi  masala tadka.jpg,/515Wx515H/pringles chips - desi  masala tadka.jpg,/300Wx300H/pringles chips - desi  masala tadka.jpg,/96Wx96H/pringles chips - desi  masala tadka.jpg,/65Wx65H/pringles chips - desi  masala tadka.jpg,/30Wx30H/pringles chips - desi  masala tadka.jpg;
+
+;swastiks  mango pickle avakaya;/1200Wx1200H/swastiks  mango pickle avakaya.jpg,/515Wx515H/swastiks  mango pickle avakaya.jpg,/300Wx300H/swastiks  mango pickle avakaya.jpg,/96Wx96H/swastiks  mango pickle avakaya.jpg,/65Wx65H/swastiks  mango pickle avakaya.jpg,/30Wx30H/swastiks  mango pickle avakaya.jpg;
+
+;keya malabar chicken pickle;/1200Wx1200H/keya malabar chicken pickle.jpg,/515Wx515H/keya malabar chicken pickle.jpg,/300Wx300H/keya malabar chicken pickle.jpg,/96Wx96H/keya malabar chicken pickle.jpg,/65Wx65H/keya malabar chicken pickle.jpg,/30Wx30H/keya malabar chicken pickle.jpg;
+
+;priya gongura pickle;/1200Wx1200H/priya gongura pickle.jpg,/515Wx515H/priya gongura pickle.jpg,/300Wx300H/priya gongura pickle.jpg,/96Wx96H/priya gongura pickle.jpg,/65Wx65H/priya gongura pickle.jpg,/30Wx30H/priya gongura pickle.jpg;
+
+;kellogg's corn flakes;/1200Wx1200H/kellogg's corn flakes.jpg,/515Wx515H/kellogg's corn flakes.jpg,/300Wx300H/kellogg's corn flakes.jpg,/96Wx96H/kellogg's corn flakes.jpg,/65Wx65H/kellogg's corn flakes.jpg,/30Wx30H/kellogg's corn flakes.jpg;
+
+;alpino peanut butter super oats chocolate;/1200Wx1200H/alpino peanut butter super oats chocolate.jpg,/515Wx515H/alpino peanut butter super oats chocolate.jpg,/300Wx300H/alpino peanut butter super oats chocolate.jpg,/96Wx96H/alpino peanut butter super oats chocolate.jpg,/65Wx65H/alpino peanut butter super oats chocolate.jpg,/30Wx30H/alpino peanut butter super oats chocolate.jpg;
+
+;britannia 100% whole wheat bread;/1200Wx1200H/britannia 100% whole wheat bread.jpg,/515Wx515H/britannia 100% whole wheat bread.jpg,/300Wx300H/britannia 100% whole wheat bread.jpg,/96Wx96H/britannia 100% whole wheat bread.jpg,/65Wx65H/britannia 100% whole wheat bread.jpg,/30Wx30H/britannia 100% whole wheat bread.jpg;
+
+;sunfeast yippee! magic masala;/1200Wx1200H/sunfeast yippee! magic masala.jpg,/515Wx515H/sunfeast yippee! magic masala.jpg,/300Wx300H/sunfeast yippee! magic masala.jpg,/96Wx96H/sunfeast yippee! magic masala.jpg,/65Wx65H/sunfeast yippee! magic masala.jpg,/30Wx30H/sunfeast yippee! magic masala.jpg;
+
+;borges spaghetti durum wheat pasta;/1200Wx1200H/borges spaghetti durum wheat pasta.jpg,/515Wx515H/borges spaghetti durum wheat pasta.jpg,/300Wx300H/borges spaghetti durum wheat pasta.jpg,/96Wx96H/borges spaghetti durum wheat pasta.jpg,/65Wx65H/borges spaghetti durum wheat pasta.jpg,/30Wx30H/borges spaghetti durum wheat pasta.jpg;
+
+;mtr multigrain dosa;/1200Wx1200H/mtr multigrain dosa.jpg,/515Wx515H/mtr multigrain dosa.jpg,/300Wx300H/mtr multigrain dosa.jpg,/96Wx96H/mtr multigrain dosa.jpg,/65Wx65H/mtr multigrain dosa.jpg,/30Wx30H/mtr multigrain dosa.jpg;
+
+
+
+# Update Products with Media and Media Containers
+UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+
+;P00001;/300Wx300H/monster energy drink.jpg;/96Wx96H/monster energy drink.jpg;;/515Wx515H/monster energy drink.jpg,/65Wx65H/monster energy drink.jpg,/30Wx30H/monster energy drink.jpg;/300Wx300H/monster energy drink.jpg;/96Wx96H/monster energy drink.jpg;monster energy drink;
+
+;P00002;/300Wx300H/sting energy drink.jpg;/96Wx96H/sting energy drink.jpg;;/515Wx515H/sting energy drink.jpg,/65Wx65H/sting energy drink.jpg,/30Wx30H/sting energy drink.jpg;/300Wx300H/sting energy drink.jpg;/96Wx96H/sting energy drink.jpg;sting energy drink;
+
+;P00003;/300Wx300H/red bull.jpg;/96Wx96H/red bull.jpg;;/515Wx515H/red bull.jpg,/65Wx65H/red bull.jpg,/30Wx30H/red bull.jpg;/300Wx300H/red bull.jpg;/96Wx96H/red bull.jpg;red bull;
+
+;P00004;/300Wx300H/coca cola.jpg;/96Wx96H/coca cola.jpg;;/515Wx515H/coca cola.jpg,/65Wx65H/coca cola.jpg,/30Wx30H/coca cola.jpg;/300Wx300H/coca cola.jpg;/96Wx96H/coca cola.jpg;coca cola;
+
+;P00005;/300Wx300H/sprite.jpg;/96Wx96H/sprite.jpg;;/515Wx515H/sprite.jpg,/65Wx65H/sprite.jpg,/30Wx30H/sprite.jpg;/300Wx300H/sprite.jpg;/96Wx96H/sprite.jpg;sprite;
+
+;P00006;/300Wx300H/thums up.jpg;/96Wx96H/thums up.jpg;;/515Wx515H/thums up.jpg,/65Wx65H/thums up.jpg,/30Wx30H/thums up.jpg;/300Wx300H/thums up.jpg;/96Wx96H/thums up.jpg;thums up;
+
+;P00007;/300Wx300H/chocolate milkshake.jpg;/96Wx96H/chocolate milkshake.jpg;;/515Wx515H/chocolate milkshake.jpg,/65Wx65H/chocolate milkshake.jpg,/30Wx30H/chocolate milkshake.jpg;/300Wx300H/chocolate milkshake.jpg;/96Wx96H/chocolate milkshake.jpg;chocolate milkshake;
+
+;P00008;/300Wx300H/mango milkshake.jpg;/96Wx96H/mango milkshake.jpg;;/515Wx515H/mango milkshake.jpg,/65Wx65H/mango milkshake.jpg,/30Wx30H/mango milkshake.jpg;/300Wx300H/mango milkshake.jpg;/96Wx96H/mango milkshake.jpg;mango milkshake;
+
+;P00009;/300Wx300H/strawberry milkshake.jpg;/96Wx96H/strawberry milkshake.jpg;;/515Wx515H/strawberry milkshake.jpg,/65Wx65H/strawberry milkshake.jpg,/30Wx30H/strawberry milkshake.jpg;/300Wx300H/strawberry milkshake.jpg;/96Wx96H/strawberry milkshake.jpg;strawberry milkshake;
+
+;P00010;/300Wx300H/grape juice.jpg;/96Wx96H/grape juice.jpg;;/515Wx515H/grape juice.jpg,/65Wx65H/grape juice.jpg,/30Wx30H/grape juice.jpg;/300Wx300H/grape juice.jpg;/96Wx96H/grape juice.jpg;grape juice;
+
+;P00011;/300Wx300H/orange juice.jpg;/96Wx96H/orange juice.jpg;;/515Wx515H/orange juice.jpg,/65Wx65H/orange juice.jpg,/30Wx30H/orange juice.jpg;/300Wx300H/orange juice.jpg;/96Wx96H/orange juice.jpg;orange juice;
+
+;P00012;/300Wx300H/mango juice.jpg;/96Wx96H/mango juice.jpg;;/515Wx515H/mango juice.jpg,/65Wx65H/mango juice.jpg,/30Wx30H/mango juice.jpg;/300Wx300H/mango juice.jpg;/96Wx96H/mango juice.jpg;mango juice;
+
+;P00013;/300Wx300H/biotique ocean kelp shampoo.jpg;/96Wx96H/biotique ocean kelp shampoo.jpg;;/515Wx515H/biotique ocean kelp shampoo.jpg,/65Wx65H/biotique ocean kelp shampoo.jpg,/30Wx30H/biotique ocean kelp shampoo.jpg;/300Wx300H/biotique ocean kelp shampoo.jpg;/96Wx96H/biotique ocean kelp shampoo.jpg;biotique ocean kelp shampoo;
+
+;P00014;/300Wx300H/himalaya neem face wash.jpg;/96Wx96H/himalaya neem face wash.jpg;;/515Wx515H/himalaya neem face wash.jpg,/65Wx65H/himalaya neem face wash.jpg,/30Wx30H/himalaya neem face wash.jpg;/300Wx300H/himalaya neem face wash.jpg;/96Wx96H/himalaya neem face wash.jpg;himalaya neem face wash;
+
+;P00015;/300Wx300H/bajaj almond drops hair oil.jpg;/96Wx96H/bajaj almond drops hair oil.jpg;;/515Wx515H/bajaj almond drops hair oil.jpg,/65Wx65H/bajaj almond drops hair oil.jpg,/30Wx30H/bajaj almond drops hair oil.jpg;/300Wx300H/bajaj almond drops hair oil.jpg;/96Wx96H/bajaj almond drops hair oil.jpg;bajaj almond drops hair oil;
+
+;P00016;/300Wx300H/lizol disinfectant surface and floor cleaner.jpg;/96Wx96H/lizol disinfectant surface and floor cleaner.jpg;;/515Wx515H/lizol disinfectant surface and floor cleaner.jpg,/65Wx65H/lizol disinfectant surface and floor cleaner.jpg,/30Wx30H/lizol disinfectant surface and floor cleaner.jpg;/300Wx300H/lizol disinfectant surface and floor cleaner.jpg;/96Wx96H/lizol disinfectant surface and floor cleaner.jpg;lizol disinfectant surface and floor cleaner;
+
+;P00017;/300Wx300H/dettol lime disinfectant floor cleaner.jpg;/96Wx96H/dettol lime disinfectant floor cleaner.jpg;;/515Wx515H/dettol lime disinfectant floor cleaner.jpg,/65Wx65H/dettol lime disinfectant floor cleaner.jpg,/30Wx30H/dettol lime disinfectant floor cleaner.jpg;/300Wx300H/dettol lime disinfectant floor cleaner.jpg;/96Wx96H/dettol lime disinfectant floor cleaner.jpg;dettol lime disinfectant floor cleaner;
+
+;P00018;/300Wx300H/colin glass and surface cleaner liquid spray.jpg;/96Wx96H/colin glass and surface cleaner liquid spray.jpg;;/515Wx515H/colin glass and surface cleaner liquid spray.jpg,/65Wx65H/colin glass and surface cleaner liquid spray.jpg,/30Wx30H/colin glass and surface cleaner liquid spray.jpg;/300Wx300H/colin glass and surface cleaner liquid spray.jpg;/96Wx96H/colin glass and surface cleaner liquid spray.jpg;colin glass and surface cleaner liquid spray;
+
+;P00019;/300Wx300H/ariel detergent washing powder.jpg;/96Wx96H/ariel detergent washing powder.jpg;;/515Wx515H/ariel detergent washing powder.jpg,/65Wx65H/ariel detergent washing powder.jpg,/30Wx30H/ariel detergent washing powder.jpg;/300Wx300H/ariel detergent washing powder.jpg;/96Wx96H/ariel detergent washing powder.jpg;ariel detergent washing powder;
+
+;P00020;/300Wx300H/surf excel easy wash detergent powder.jpg;/96Wx96H/surf excel easy wash detergent powder.jpg;;/515Wx515H/surf excel easy wash detergent powder.jpg,/65Wx65H/surf excel easy wash detergent powder.jpg,/30Wx30H/surf excel easy wash detergent powder.jpg;/300Wx300H/surf excel easy wash detergent powder.jpg;/96Wx96H/surf excel easy wash detergent powder.jpg;surf excel easy wash detergent powder;
+
+;P00021;/300Wx300H/rin advanced detergent powder.jpg;/96Wx96H/rin advanced detergent powder.jpg;;/515Wx515H/rin advanced detergent powder.jpg,/65Wx65H/rin advanced detergent powder.jpg,/30Wx30H/rin advanced detergent powder.jpg;/300Wx300H/rin advanced detergent powder.jpg;/96Wx96H/rin advanced detergent powder.jpg;rin advanced detergent powder;
+
+;P00022;/300Wx300H/exo dishwash bar.jpg;/96Wx96H/exo dishwash bar.jpg;;/515Wx515H/exo dishwash bar.jpg,/65Wx65H/exo dishwash bar.jpg,/30Wx30H/exo dishwash bar.jpg;/300Wx300H/exo dishwash bar.jpg;/96Wx96H/exo dishwash bar.jpg;exo dishwash bar;
+
+;P00023;/300Wx300H/vim dishwash liquid gel lemon bottle.jpg;/96Wx96H/vim dishwash liquid gel lemon bottle.jpg;;/515Wx515H/vim dishwash liquid gel lemon bottle.jpg,/65Wx65H/vim dishwash liquid gel lemon bottle.jpg,/30Wx30H/vim dishwash liquid gel lemon bottle.jpg;/300Wx300H/vim dishwash liquid gel lemon bottle.jpg;/96Wx96H/vim dishwash liquid gel lemon bottle.jpg;vim dishwash liquid gel lemon bottle;
+
+;P00024;/300Wx300H/dew fresh dishwash tub - ginger and lemon.jpg;/96Wx96H/dew fresh dishwash tub - ginger and lemon.jpg;;/515Wx515H/dew fresh dishwash tub - ginger and lemon.jpg,/65Wx65H/dew fresh dishwash tub - ginger and lemon.jpg,/30Wx30H/dew fresh dishwash tub - ginger and lemon.jpg;/300Wx300H/dew fresh dishwash tub - ginger and lemon.jpg;/96Wx96H/dew fresh dishwash tub - ginger and lemon.jpg;dew fresh dishwash tub - ginger and lemon;
+
+;P00025;/300Wx300H/mtr masala - spicy sambar powder.jpg;/96Wx96H/mtr masala - spicy sambar powder.jpg;;/515Wx515H/mtr masala - spicy sambar powder.jpg,/65Wx65H/mtr masala - spicy sambar powder.jpg,/30Wx30H/mtr masala - spicy sambar powder.jpg;/300Wx300H/mtr masala - spicy sambar powder.jpg;/96Wx96H/mtr masala - spicy sambar powder.jpg;mtr masala - spicy sambar powder;
+
+;P00026;/300Wx300H/everest garam masala.jpg;/96Wx96H/everest garam masala.jpg;;/515Wx515H/everest garam masala.jpg,/65Wx65H/everest garam masala.jpg,/30Wx30H/everest garam masala.jpg;/300Wx300H/everest garam masala.jpg;/96Wx96H/everest garam masala.jpg;everest garam masala;
+
+;P00027;/300Wx300H/eastern chicken masala.jpg;/96Wx96H/eastern chicken masala.jpg;;/515Wx515H/eastern chicken masala.jpg,/65Wx65H/eastern chicken masala.jpg,/30Wx30H/eastern chicken masala.jpg;/300Wx300H/eastern chicken masala.jpg;/96Wx96H/eastern chicken masala.jpg;eastern chicken masala;
+
+;P00028;/300Wx300H/india gate basmati rice classic.jpg;/96Wx96H/india gate basmati rice classic.jpg;;/515Wx515H/india gate basmati rice classic.jpg,/65Wx65H/india gate basmati rice classic.jpg,/30Wx30H/india gate basmati rice classic.jpg;/300Wx300H/india gate basmati rice classic.jpg;/96Wx96H/india gate basmati rice classic.jpg;india gate basmati rice classic;
+
+;P00029;/300Wx300H/fortune sona masoori supreme rice.jpg;/96Wx96H/fortune sona masoori supreme rice.jpg;;/515Wx515H/fortune sona masoori supreme rice.jpg,/65Wx65H/fortune sona masoori supreme rice.jpg,/30Wx30H/fortune sona masoori supreme rice.jpg;/300Wx300H/fortune sona masoori supreme rice.jpg;/96Wx96H/fortune sona masoori supreme rice.jpg;fortune sona masoori supreme rice;
+
+;P00030;/300Wx300H/nutritious brown rice unpolished.jpg;/96Wx96H/nutritious brown rice unpolished.jpg;;/515Wx515H/nutritious brown rice unpolished.jpg,/65Wx65H/nutritious brown rice unpolished.jpg,/30Wx30H/nutritious brown rice unpolished.jpg;/300Wx300H/nutritious brown rice unpolished.jpg;/96Wx96H/nutritious brown rice unpolished.jpg;nutritious brown rice unpolished;
+
+;P00031;/300Wx300H/safe harvest tur dal.jpg;/96Wx96H/safe harvest tur dal.jpg;;/515Wx515H/safe harvest tur dal.jpg,/65Wx65H/safe harvest tur dal.jpg,/30Wx30H/safe harvest tur dal.jpg;/300Wx300H/safe harvest tur dal.jpg;/96Wx96H/safe harvest tur dal.jpg;safe harvest tur dal;
+
+;P00032;/300Wx300H/town grocer raw peanuts.jpg;/96Wx96H/town grocer raw peanuts.jpg;;/515Wx515H/town grocer raw peanuts.jpg,/65Wx65H/town grocer raw peanuts.jpg,/30Wx30H/town grocer raw peanuts.jpg;/300Wx300H/town grocer raw peanuts.jpg;/96Wx96H/town grocer raw peanuts.jpg;town grocer raw peanuts;
+
+;P00033;/300Wx300H/popular essentials urad gola white.jpg;/96Wx96H/popular essentials urad gola white.jpg;;/515Wx515H/popular essentials urad gola white.jpg,/65Wx65H/popular essentials urad gola white.jpg,/30Wx30H/popular essentials urad gola white.jpg;/300Wx300H/popular essentials urad gola white.jpg;/96Wx96H/popular essentials urad gola white.jpg;popular essentials urad gola white;
+
+;P00034;/300Wx300H/freedom refined sunflower oil.jpg;/96Wx96H/freedom refined sunflower oil.jpg;;/515Wx515H/freedom refined sunflower oil.jpg,/65Wx65H/freedom refined sunflower oil.jpg,/30Wx30H/freedom refined sunflower oil.jpg;/300Wx300H/freedom refined sunflower oil.jpg;/96Wx96H/freedom refined sunflower oil.jpg;freedom refined sunflower oil;
+
+;P00035;/300Wx300H/saffola gold oil.jpg;/96Wx96H/saffola gold oil.jpg;;/515Wx515H/saffola gold oil.jpg,/65Wx65H/saffola gold oil.jpg,/30Wx30H/saffola gold oil.jpg;/300Wx300H/saffola gold oil.jpg;/96Wx96H/saffola gold oil.jpg;saffola gold oil;
+
+;P00036;/300Wx300H/organic tattva peanut oil.jpg;/96Wx96H/organic tattva peanut oil.jpg;;/515Wx515H/organic tattva peanut oil.jpg,/65Wx65H/organic tattva peanut oil.jpg,/30Wx30H/organic tattva peanut oil.jpg;/300Wx300H/organic tattva peanut oil.jpg;/96Wx96H/organic tattva peanut oil.jpg;organic tattva peanut oil;
+
+;P00037;/300Wx300H/carrot.jpg;/96Wx96H/carrot.jpg;;/515Wx515H/carrot.jpg,/65Wx65H/carrot.jpg,/30Wx30H/carrot.jpg;/300Wx300H/carrot.jpg;/96Wx96H/carrot.jpg;carrot;
+
+;P00038;/300Wx300H/cabbage.jpg;/96Wx96H/cabbage.jpg;;/515Wx515H/cabbage.jpg,/65Wx65H/cabbage.jpg,/30Wx30H/cabbage.jpg;/300Wx300H/cabbage.jpg;/96Wx96H/cabbage.jpg;cabbage;
+
+;P00039;/300Wx300H/beetroot.jpg;/96Wx96H/beetroot.jpg;;/515Wx515H/beetroot.jpg,/65Wx65H/beetroot.jpg,/30Wx30H/beetroot.jpg;/300Wx300H/beetroot.jpg;/96Wx96H/beetroot.jpg;beetroot;
+
+;P00040;/300Wx300H/apple.jpg;/96Wx96H/apple.jpg;;/515Wx515H/apple.jpg,/65Wx65H/apple.jpg,/30Wx30H/apple.jpg;/300Wx300H/apple.jpg;/96Wx96H/apple.jpg;apple;
+
+;P00041;/300Wx300H/banana.jpg;/96Wx96H/banana.jpg;;/515Wx515H/banana.jpg,/65Wx65H/banana.jpg,/30Wx30H/banana.jpg;/300Wx300H/banana.jpg;/96Wx96H/banana.jpg;banana;
+
+;P00042;/300Wx300H/grapes.jpg;/96Wx96H/grapes.jpg;;/515Wx515H/grapes.jpg,/65Wx65H/grapes.jpg,/30Wx30H/grapes.jpg;/300Wx300H/grapes.jpg;/96Wx96H/grapes.jpg;grapes;
+
+;P00043;/300Wx300H/pomegranate shelled.jpg;/96Wx96H/pomegranate shelled.jpg;;/515Wx515H/pomegranate shelled.jpg,/65Wx65H/pomegranate shelled.jpg,/30Wx30H/pomegranate shelled.jpg;/300Wx300H/pomegranate shelled.jpg;/96Wx96H/pomegranate shelled.jpg;pomegranate shelled;
+
+;P00044;/300Wx300H/papaya diced.jpg;/96Wx96H/papaya diced.jpg;;/515Wx515H/papaya diced.jpg,/65Wx65H/papaya diced.jpg,/30Wx30H/papaya diced.jpg;/300Wx300H/papaya diced.jpg;/96Wx96H/papaya diced.jpg;papaya diced;
+
+;P00045;/300Wx300H/pineapple slice.jpg;/96Wx96H/pineapple slice.jpg;;/515Wx515H/pineapple slice.jpg,/65Wx65H/pineapple slice.jpg,/30Wx30H/pineapple slice.jpg;/300Wx300H/pineapple slice.jpg;/96Wx96H/pineapple slice.jpg;pineapple slice;
+
+;P00046;/300Wx300H/spinach.jpg;/96Wx96H/spinach.jpg;;/515Wx515H/spinach.jpg,/65Wx65H/spinach.jpg,/30Wx30H/spinach.jpg;/300Wx300H/spinach.jpg;/96Wx96H/spinach.jpg;spinach;
+
+;P00047;/300Wx300H/mint(pudina aaku).jpg;/96Wx96H/mint(pudina aaku).jpg;;/515Wx515H/mint(pudina aaku).jpg,/65Wx65H/mint(pudina aaku).jpg,/30Wx30H/mint(pudina aaku).jpg;/300Wx300H/mint(pudina aaku).jpg;/96Wx96H/mint(pudina aaku).jpg;mint(pudina aaku);
+
+;P00048;/300Wx300H/curry leaves.jpg;/96Wx96H/curry leaves.jpg;;/515Wx515H/curry leaves.jpg,/65Wx65H/curry leaves.jpg,/30Wx30H/curry leaves.jpg;/300Wx300H/curry leaves.jpg;/96Wx96H/curry leaves.jpg;curry leaves;
+
+;P00049;/300Wx300H/doritos nacho chips - cheese flavour.jpg;/96Wx96H/doritos nacho chips - cheese flavour.jpg;;/515Wx515H/doritos nacho chips - cheese flavour.jpg,/65Wx65H/doritos nacho chips - cheese flavour.jpg,/30Wx30H/doritos nacho chips - cheese flavour.jpg;/300Wx300H/doritos nacho chips - cheese flavour.jpg;/96Wx96H/doritos nacho chips - cheese flavour.jpg;doritos nacho chips - cheese flavour;
+
+;P00050;/300Wx300H/haldiram's moong dal.jpg;/96Wx96H/haldiram's moong dal.jpg;;/515Wx515H/haldiram's moong dal.jpg,/65Wx65H/haldiram's moong dal.jpg,/30Wx30H/haldiram's moong dal.jpg;/300Wx300H/haldiram's moong dal.jpg;/96Wx96H/haldiram's moong dal.jpg;haldiram's moong dal;
+
+;P00051;/300Wx300H/pringles chips - desi  masala tadka.jpg;/96Wx96H/pringles chips - desi  masala tadka.jpg;;/515Wx515H/pringles chips - desi  masala tadka.jpg,/65Wx65H/pringles chips - desi  masala tadka.jpg,/30Wx30H/pringles chips - desi  masala tadka.jpg;/300Wx300H/pringles chips - desi  masala tadka.jpg;/96Wx96H/pringles chips - desi  masala tadka.jpg;pringles chips - desi  masala tadka;
+
+;P00052;/300Wx300H/swastiks  mango pickle avakaya.jpg;/96Wx96H/swastiks  mango pickle avakaya.jpg;;/515Wx515H/swastiks  mango pickle avakaya.jpg,/65Wx65H/swastiks  mango pickle avakaya.jpg,/30Wx30H/swastiks  mango pickle avakaya.jpg;/300Wx300H/swastiks  mango pickle avakaya.jpg;/96Wx96H/swastiks  mango pickle avakaya.jpg;swastiks  mango pickle avakaya;
+
+;P00053;/300Wx300H/keya malabar chicken pickle.jpg;/96Wx96H/keya malabar chicken pickle.jpg;;/515Wx515H/keya malabar chicken pickle.jpg,/65Wx65H/keya malabar chicken pickle.jpg,/30Wx30H/keya malabar chicken pickle.jpg;/300Wx300H/keya malabar chicken pickle.jpg;/96Wx96H/keya malabar chicken pickle.jpg;keya malabar chicken pickle;
+
+;P00054;/300Wx300H/priya gongura pickle.jpg;/96Wx96H/priya gongura pickle.jpg;;/515Wx515H/priya gongura pickle.jpg,/65Wx65H/priya gongura pickle.jpg,/30Wx30H/priya gongura pickle.jpg;/300Wx300H/priya gongura pickle.jpg;/96Wx96H/priya gongura pickle.jpg;priya gongura pickle;
+
+;P00055;/300Wx300H/kellogg's corn flakes.jpg;/96Wx96H/kellogg's corn flakes.jpg;;/515Wx515H/kellogg's corn flakes.jpg,/65Wx65H/kellogg's corn flakes.jpg,/30Wx30H/kellogg's corn flakes.jpg;/300Wx300H/kellogg's corn flakes.jpg;/96Wx96H/kellogg's corn flakes.jpg;kellogg's corn flakes;
+
+;P00056;/300Wx300H/alpino peanut butter super oats chocolate.jpg;/96Wx96H/alpino peanut butter super oats chocolate.jpg;;/515Wx515H/alpino peanut butter super oats chocolate.jpg,/65Wx65H/alpino peanut butter super oats chocolate.jpg,/30Wx30H/alpino peanut butter super oats chocolate.jpg;/300Wx300H/alpino peanut butter super oats chocolate.jpg;/96Wx96H/alpino peanut butter super oats chocolate.jpg;alpino peanut butter super oats chocolate;
+
+;P00057;/300Wx300H/britannia 100% whole wheat bread.jpg;/96Wx96H/britannia 100% whole wheat bread.jpg;;/515Wx515H/britannia 100% whole wheat bread.jpg,/65Wx65H/britannia 100% whole wheat bread.jpg,/30Wx30H/britannia 100% whole wheat bread.jpg;/300Wx300H/britannia 100% whole wheat bread.jpg;/96Wx96H/britannia 100% whole wheat bread.jpg;britannia 100% whole wheat bread;
+
+;P00058;/300Wx300H/sunfeast yippee! magic masala.jpg;/96Wx96H/sunfeast yippee! magic masala.jpg;;/515Wx515H/sunfeast yippee! magic masala.jpg,/65Wx65H/sunfeast yippee! magic masala.jpg,/30Wx30H/sunfeast yippee! magic masala.jpg;/300Wx300H/sunfeast yippee! magic masala.jpg;/96Wx96H/sunfeast yippee! magic masala.jpg;sunfeast yippee! magic masala;
+
+;P00059;/300Wx300H/borges spaghetti durum wheat pasta.jpg;/96Wx96H/borges spaghetti durum wheat pasta.jpg;;/515Wx515H/borges spaghetti durum wheat pasta.jpg,/65Wx65H/borges spaghetti durum wheat pasta.jpg,/30Wx30H/borges spaghetti durum wheat pasta.jpg;/300Wx300H/borges spaghetti durum wheat pasta.jpg;/96Wx96H/borges spaghetti durum wheat pasta.jpg;borges spaghetti durum wheat pasta;
+
+;P00060;/300Wx300H/mtr multigrain dosa.jpg;/96Wx96H/mtr multigrain dosa.jpg;;/515Wx515H/mtr multigrain dosa.jpg,/65Wx65H/mtr multigrain dosa.jpg,/30Wx30H/mtr multigrain dosa.jpg;/300Wx300H/mtr multigrain dosa.jpg;/96Wx96H/mtr multigrain dosa.jpg;mtr multigrain dosa;

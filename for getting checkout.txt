@@ -1,0 +1,32 @@
+
+
+1.C:\Windows\System32\drivers\etc\hosts->go to this path -> open that file "hosts" in notepad and change your local
+
+
+2. 127.0.0.1       grocerystore.local
+
+   ::1             grocerystore.local
+
+
+3.add those two lines in that file and restart your server
+
+4.add these two lines in local.properties
+
+	website.grocerystore.http=http\://grocerystore.local\:9001/grocerystorestorefront
+	website.grocerystore.https=https\://grocerystore.local\:9002/grocerystorestorefront
+
+5.add those two also in there Begin Reference... add those two also in there
+
+	acceleratorservices.payment.response.url.allowlist=https://localhost:9002,https://grocerystore.local:9002
+	acceleratorservices.merchant.callback.url.allowlist=https://localhost:9002,https://grocerystore.local:9002
+line number 75 and 82 
+
+
+
+6.acceleratorservices.payment.sopmock.enabled=true 
+  acceleratorservices.payment.hopmock.enabled=true  changed this from false to true in acceleratorservices project.properties.
+
+
+
+
+restart the server and try to checkout 

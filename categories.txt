@@ -1,0 +1,84 @@
+
+# Macros / Replacement Parameter definitions
+
+$productCatalog=sabziwallaProductCatalog
+
+$productCatalogName=Sabziwalla Product Catalog
+
+ 
+
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+
+$supercategories=source(code, $catalogVersion)[unique=true]
+
+$categories=target(code, $catalogVersion)[unique=true]
+
+
+# Insert Category Structure
+INSERT_UPDATE CategoryCategoryRelation;$categories;$supercategories
+
+# Insert Categories
+INSERT_UPDATE Category;code[unique=true];allowedPrincipals(uid)[default='customergroup'];$catalogVersion
+
+
+;Beverages;;
+
+;Cleaning Essentials;;
+
+;Cooking Essentials;;
+
+;Fruits and Vegetables;;
+
+;Packed Foods;;
+
+
+# Insert Sub Categories
+INSERT_UPDATE Category;code[unique=true];$catalogVersion;supercategories(code,$catalogVersion);allowedPrincipals(uid)[default='customergroup']
+ 
+
+;energy drinks;;Beverages
+
+;soft drinks;;Beverages
+
+;milkshakes;;Beverages
+
+;fruit juices;;Beverages
+
+
+
+;bath and body;;Cleaning Essentials
+
+;floor cleaners;;Cleaning Essentials
+
+;detergents;;Cleaning Essentials
+
+;kitchen cleaners;;Cleaning Essentials
+
+
+
+;masala;;Cooking Essentials
+
+;rice;;Cooking Essentials
+
+;dal and pulses;;Cooking Essentials
+
+;oils;;Cooking Essentials
+
+
+;fresh vegetables;;Fruits and Vegetables
+
+;fresh fruits;;Fruits and Vegetables
+
+;cutted fruits;;Fruits and Vegetables
+
+;herbs;;Fruits and Vegetables
+
+
+
+;snacks;;Packed Foods
+
+;pickles;;Packed Foods
+
+;morning starters;;Packed Foods
+
+;pasta and more;;Packed Foods

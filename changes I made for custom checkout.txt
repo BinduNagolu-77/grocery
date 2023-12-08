@@ -1,0 +1,26 @@
+changes I made :
+
+1.mutli-step-checkout-config.xml
+2.ValidationResults.java
+3.ResponsivePaymentCheckoutStepValidator.java
+if (getCheckoutFlowFacade().hasNoCustomMethod())
+		{
+			GlobalMessages.addFlashMessage(redirectAttributes, GlobalMessages.INFO_MESSAGES_HOLDER,
+					"checkout.multi.customMethod.notprovided");
+			return ValidationResults.REDIRECT_TO_CUSTOM_METHOD;
+
+		}
+4.ResponsiveSummaryCheckoutStepValidator.java
+if (getCheckoutFlowFacade().hasNoCustomMethod())
+		{
+			GlobalMessages.addFlashMessage(redirectAttributes, GlobalMessages.INFO_MESSAGES_HOLDER,
+					"checkout.multi.customMethod.notprovided");
+			return ValidationResults.REDIRECT_TO_CUSTOM_METHOD;
+
+		}
+5.base-en.properties
+6.create a custom controller
+7.ControllerConstants for adding jsp page   https://grocery.local:9002/grocerystorestorefront/grocery/en/checkout/multi/custom-method/view
+8.ResponsiveCustomMethodCheckoutStepValidator.java
+
+9.changes in acc.checkout.js

@@ -1,0 +1,14 @@
+After adding items.xml the model will be genarated after ant all for the attributes.
+and for populating we will be adding the beans in facade beans.xml and then populating them in populator.
+
+if we want to do our own indexing then we will be using value provider
+
+use of jalo: if parent class is abstract then the
+
+solr is a search engine.used for searching.
+
+Indexing ,if data is indexed then the data stores in solr and we can take from there.we are exporting from sap hybris to solr.
+
+About checkout: https://www.stackextend.com/hybris/understand-the-b2c-checkout-flow-in-hybris/ , https://hybrisworld.wordpress.com/checkout/
+
+Breadcrumbs are the common website navigation elements which allows a customer to see their journey in the website, and track backwards through the website to earlier pages. We can also say it as a list of breadcrumbs which takes the user to the current page.
